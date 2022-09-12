@@ -13,6 +13,7 @@ import Message from "../components/loadingError/Error";
 import moment from "moment";
 import axios from "axios";
 import { ORDER_CREATE_PAYMENT_RESET } from "../../../redux/constants/orderConstants";
+import { baseUrl } from "../../services/requestUrl";
 
 export const OrderScreen = ({ match }) => {
   // window.scroll(0, 0);
@@ -40,7 +41,7 @@ export const OrderScreen = ({ match }) => {
 
   useEffect(() => {
     const addPaypalScript = async () => {
-      const { data: clientId } = await axios.get("/api/config/paypal");
+      const { data: clientId } = await axios.get(`${baseUrl}/api/config/paypal`);
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
