@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { updateCategoryAction } from "../../../../../redux/actions/categoriesActions";
 
-export const EditCategoryModal = ({ loading, error, category, setRefresh }) => {
+export const EditCategoryModal = ({ loading, category, setRefresh }) => {
   const [name, setName] = useState(() => category?.name);
   const [description, setDescription] = useState(() => category?.description);
   const [image, setImage] = useState(() => category?.image);

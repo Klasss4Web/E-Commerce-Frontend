@@ -5,7 +5,7 @@ import Message from "../loadingError/Error";
 import Loading from "../loadingError/Loading";
 import { Orders } from "./Orders";
 
-export const MainOrder = ({ orderId }) => {
+export const MainOrder = () => {
 
   // const dispatch = useDispatch();
   const adminOrderList = useSelector((state) => state.adminOrderList);

@@ -62,6 +62,8 @@ export const MainEditProduct = ({ productId }) => {
         setCategory(product?.category);
       }
     }
+
+    // eslint-disable-next-line
   }, [product, dispatch, productId, updateSuccess]);
 
   const handleUpdateProduct = (e) => {
@@ -225,6 +227,7 @@ export const MainEditProduct = ({ productId }) => {
                 width="100%"
                 height={"300px"}
                 style={{ borderRadius: "10px" }}
+                alt=""
               />
               <p>{name}</p>
               <hr />

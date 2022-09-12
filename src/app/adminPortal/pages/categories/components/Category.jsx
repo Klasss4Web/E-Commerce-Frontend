@@ -13,6 +13,7 @@ export const Category = ({ category, setRefresh }) => {
      }
     
   }
+
   return (
     <div
       class="card category-card"
@@ -21,7 +22,7 @@ export const Category = ({ category, setRefresh }) => {
       <img
         class="card-img-top"
         src={category?.image}
-        alt="Card image cap"
+        alt="cap"
         height={"150px"}
         style={{ borderRadius: "10px" }}
       />

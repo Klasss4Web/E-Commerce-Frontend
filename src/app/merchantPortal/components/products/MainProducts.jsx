@@ -18,27 +18,10 @@ export const MainProducts = ({ products = [], loading, error }) => {
   const [filteredData, setFilteredData] = useState(products);
 
   const adminDeleteProduct = useSelector((state) => state.adminDeleteProduct);
-  const { error: deleteError, success } = adminDeleteProduct;
+  const { success } = adminDeleteProduct;
 
   const adminGetCategories = useSelector((state) => state.adminGetCategories);
   const { categories } = adminGetCategories;
-
-  // const handleFilter = (e) => {
-  //   const keyword = e.target.value;
-
-  //   if (keyword !== "") {
-  //     const results = products?.filter((product) => {
-  //       return product.name.toLowerCase().includes(keyword.toLowerCase());
-  //       // Use the toLowerCase() method to make it case-insensitive
-  //     });
-  //     setFilteredData(results);
-  //   } else {
-  //     setFilteredData(products);
-  //   }
-  //   setValue(keyword);
-  // };
-
-  // console.log("filteredData", filteredData);
 
   useEffect(() => {
     dispatch(adminListProducts());

@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
 import { OrderDetailProducts } from './OrderDetailProducts';
 import { MerchantDeatilsInfo } from "./MerchantDetailsInfo";
 import moment from "moment";
 
 
-export const OrderDetailsMain = ({ orderId }) => {
-
-const orders = {}
+export const OrderDetailsMain = () => {
 
   return (
     <section className="content-main">

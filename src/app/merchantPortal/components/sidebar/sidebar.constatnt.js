@@ -1,27 +1,23 @@
 import { PROTECTED_PATHS } from "../../../constants";
-import { FaCartPlus } from "react-icons/fa";
 import { GrTransaction } from "react-icons/gr"
 import { TiShoppingCart } from "react-icons/ti"
 import { MdOutlineCategory, MdOutlineDashboard } from "react-icons/md";
 import { IoPeopleOutline } from "react-icons/io5";
 import { BsBell, BsStar } from "react-icons/bs";
 import { FiTruck } from "react-icons/fi";
-import { GiGalleon } from "react-icons/gi";
 
 const {
    DASHBOARD,
   PRODUCTS,
-  ADD_PRODUCTS,
   CATEGORIES,
   CUSTOMERS,
   ORDERS,
-  MERCHANTS,
   TRANSACTIONS,
   RATINGS,
   NOTIFICATIONS,
 } = PROTECTED_PATHS;
 
-const userType = JSON.parse(sessionStorage.getItem("!!OPQ1"));
+// const userType = JSON.parse(sessionStorage.getItem("!!OPQ1"));
 
 export const ADMIN_NAV_ITEMS = [
   {
@@ -34,11 +30,7 @@ export const ADMIN_NAV_ITEMS = [
     to: PRODUCTS,
     icon: TiShoppingCart,
   },
-  // {
-  //   title: "Add Products",
-  //   to: ADD_PRODUCTS,
-  //   icon: FaCartPlus,
-  // },
+
   {
     title: "Customers",
     to: CUSTOMERS,

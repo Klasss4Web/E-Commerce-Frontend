@@ -7,7 +7,6 @@ import Toast from "../../../userPortal/components/loadingError/Toast";
 import Message from "../../components/loadingError/Error";
 import Loading from "../../components/loadingError/Loading";
 
-import bgImage from "../../images/bgImg.jpg"
 
 export const Login = ({ history }) => {
   window.scrollTo(0, 0);

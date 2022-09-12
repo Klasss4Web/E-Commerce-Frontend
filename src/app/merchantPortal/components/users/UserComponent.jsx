@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Message from '../../../userPortal/components/loadingError/Error';
 import Loading from '../../../userPortal/components/loadingError/Loading';
@@ -9,9 +8,9 @@ export const UserComponent = ({
   error,
   loading,
   value,
-  setValue,
   handleFilter,
 }) => {
+
   return (
     <section className="content-main">
       <div className="content-header">
@@ -69,7 +68,7 @@ export const UserComponent = ({
                       <img
                         className="img-md img-avatar"
                         src={user?.image}
-                        alt="User Picture"
+                        alt={"User"}
                         style={{ height: "170px", width: "100%" }}
                       />
                     </div>

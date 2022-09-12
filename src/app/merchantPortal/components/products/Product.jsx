@@ -19,7 +19,7 @@ export const Product = ({ product }) => {
         <Link to={"#"} className="img-wrap">
           <img
             src={product?.image}
-            alt="Product Image"
+            alt="Product"
             style={{ height: "170px", width: "100%" }}
           />
         </Link>

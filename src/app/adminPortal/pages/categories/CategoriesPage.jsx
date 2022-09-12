@@ -9,8 +9,6 @@ import Loading from '../../components/loadingError/Loading';
 import { ToastObjects } from '../../components/loadingError/toastObject';
 import { AddNewCategoryModal } from './components/AddNewCategoryModal';
 import { Category } from './components/Category';
-// import { Header } from '../components/Header';
-// import SideBar from '../components/sidebar/index';
 
 export const CategoriesPage = () => {
 
@@ -31,7 +29,6 @@ export const CategoriesPage = () => {
     dispatch(adminCategoriesListAction());
   }, [createdCat, dispatch, refresh]);
 
-  console.log("categories", categories);
 
   return (
     <div className="category-page">

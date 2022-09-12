@@ -48,9 +48,7 @@ export const MainEditProduct = ({ productId }) => {
       toast.success("Product successfully updated", ToastObjects);
     } else {
       if (!product?.name || product?._id !== productId) {
-        // toast.success("Product successfully updated", ToastObjects);
         dispatch(getProductDetails(productId));
-        // dispatch({ type: ADMIN_ADD_PRODUCT_RESET });
       } else {
         setName(product?.name);
         setDescription(product?.description);
@@ -60,6 +58,7 @@ export const MainEditProduct = ({ productId }) => {
         setCategory(product?.category);
       }
     }
+    // eslint-disable-next-line
   }, [product, dispatch, productId, updateSuccess]);
 
   const handleUpdateProduct = (e) => {
@@ -223,6 +222,7 @@ export const MainEditProduct = ({ productId }) => {
                 width="100%"
                 height={"300px"}
                 style={{ borderRadius: "10px" }}
+                alt=""
               />
               <p>{name}</p>
               <hr />

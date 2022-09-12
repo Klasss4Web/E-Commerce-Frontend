@@ -4,13 +4,12 @@ import { LatestOrders } from './LatestOrders'
 import { ProductsStatistics } from './ProductsStatistics'
 import { SalesStatistics } from './SalesStatistics'
 import { Cards } from './Cards'
-// import Loading from '../loadingError/Loading'
-// import Message from '../loadingError/Error'
+
 
 export const Main = () => {
 
   const orderList = useSelector(state => state.adminOrderList)
-  const { loading, error, orders } = orderList
+  const { loading, orders } = orderList
   const productList = useSelector(state=>state.adminProductList)
   const { products } = productList
   return (

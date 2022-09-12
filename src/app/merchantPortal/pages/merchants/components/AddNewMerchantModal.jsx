@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { adminCreateMerchantAction } from "../../../../../redux/actions/merchantactions";
 

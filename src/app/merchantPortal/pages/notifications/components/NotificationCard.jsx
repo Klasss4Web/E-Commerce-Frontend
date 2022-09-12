@@ -1,24 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { updateNotificationDetails } from "../../../../../redux/actions/notificationsActions";
 import { timeago } from "../../../../../utils/timeAgo";
 import Toast from "../../../components/loadingError/Toast";
-// import { ViewDetails } from "./ViewDetailsModal.jsx";
 
-export const NotificationCard = ({ notifications, setRefresh, loading }) => {
-  const dispatch = useDispatch();
+export const NotificationCard = ({ notifications }) => {
+  // const dispatch = useDispatch();
 
-  const handleApprove = (notification) => {
-    const payload = {
-      status: "Resolved",
-      productStatus: "Approved",
-      _id: notification?._id,
-    };
+  // const handleApprove = (notification) => {
+  //   const payload = {
+  //     status: "Resolved",
+  //     productStatus: "Approved",
+  //     _id: notification?._id,
+  //   };
 
-    console.log("payyy", payload);
+  //   console.log("payyy", payload);
 
-    dispatch(updateNotificationDetails(payload, setRefresh));
-  };
+  //   dispatch(updateNotificationDetails(payload, setRefresh));
+  // };
 
   return (
     <div>

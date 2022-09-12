@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../adminPortal/Admin.css";
-// import "react-toastify/dist/ReactToastify.css"
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-// import { AddProductPage } from "../adminPortal/pages/products/components/AddProductPage";
 import { HomePage } from "../adminPortal/pages/homePage/HomePage";
-// import { Login } from "../adminPortal/pages/login/Login";
-// import { NotFound } from "../adminPortal/pages/NotFound";
-// import { ProductEditPage } from "../adminPortal/pages/products/ProductEditPage";
+
 import { ProductsPage } from "../adminPortal/pages/products/ProductsPage";
 import { UsersPage } from "../adminPortal/pages/users/UsersPage";
 import { ProtectedRoutes } from "../../ProtectedRoutes";
@@ -31,17 +27,14 @@ import { useDispatch } from "react-redux";
 const AdminPortalRoutes = () => {
 
   const [toggleSide, setToggleSide] = useState(false);
-  const [showSidebar, setShowSideBar] = useState(true);
-  // const [isMobileScreen] = window.innerWidth < "700px";
+  const [showSidebar] = useState(true);
   const dispatch = useDispatch()
   const [isMobileScreen] = useState(
     () => window.matchMedia("(max-width: 700px)")?.matches
   );
-  console.log("ism", isMobileScreen?.matches);
 
    const handleToggle = () => {
      setToggleSide((initial) => !initial);
-    //  setShowSideBar(!showSidebar);
    };
 
     useEffect(() => {
@@ -49,7 +42,7 @@ const AdminPortalRoutes = () => {
         setToggleSide((initial) => !initial);
       }
       dispatch(adminListNotifications());
-    }, [isMobileScreen]);
+    }, [isMobileScreen, dispatch]);
 
   return (
     <div className={`app-container`}>

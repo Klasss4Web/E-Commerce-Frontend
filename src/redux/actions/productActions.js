@@ -38,7 +38,6 @@ import {
 } from "../constants/productConstants";
 import axios from "axios";
 import { logout } from "./userActions";
-import { toast } from "react-toastify";
 
 // ALL PRODUCTS
 export const listProducts =

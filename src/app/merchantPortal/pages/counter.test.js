@@ -1,5 +1,4 @@
 import React from "react";
-import { legacy_createStore as createStore } from "redux";
 import { Provider } from "react-redux";
 import {
   render as rtlRender,
@@ -17,14 +16,12 @@ const renderWithRedux = (component) =>
   rtlRender(<Provider store={store}>{component}</Provider>);
 
 it("renders with redux", () => {
-  const { getByTestId, getByText } = renderWithRedux(<CounterPractice />);
-  // expect(getByTestId("count")).toHaveTextContent("0");
+  renderWithRedux(<CounterPractice />);
 });
 
 it("Count has an initial value of zero", () => {
-  const { getByTestId, getByText } = renderWithRedux(<CounterPractice />);
+  const { getByTestId } = renderWithRedux(<CounterPractice />);
   expect(getByTestId("count")).toHaveTextContent("0");
-  // expect(screen.getByRole("button")).not.toBeDisabled();
 });
 
 it("Count increment by 1", () => {
@@ -41,15 +38,14 @@ it("Count decrement by 1", () => {
 });
 
 it("Button to be enabled on render", () => {
-  const { getByTestId, getByText } = renderWithRedux(<CounterPractice />);
+  const { getByTestId } = renderWithRedux(<CounterPractice />);
   const buttonElement = getByTestId("minus");
-  // fireEvent.click(getByTestId("minus"));
-  // const count = getByTestId("count").textContent;
+
   expect(buttonElement).toBeEnabled();
 });
 
 it("Button to be enabled on render", () => {
-  const { getByTestId, getByText } = renderWithRedux(<CounterPractice />);
+  const { getByTestId } = renderWithRedux(<CounterPractice />);
   const buttonElement = getByTestId("minus");
   expect(buttonElement).not.toBeDisabled();
 });

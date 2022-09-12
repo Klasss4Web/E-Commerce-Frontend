@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import { TransactionTable, Orders } from "./TransactionTable";
+import { TransactionTable } from "./TransactionTable";
 import { useFetch } from "./useFetch";
 
-export const MainTransaction = ({ orderId }) => {
+export const MainTransaction = () => {
 
   const [state, setState] = useState("InitialState")
 

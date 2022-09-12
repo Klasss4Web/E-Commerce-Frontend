@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const ProductsStatistics = () => {
   return (
@@ -7,6 +7,7 @@ export const ProductsStatistics = () => {
         <article className="card-body">
           <h5 className="card-title">Products Statistics</h5>
           <iframe
+            title="Product Stats"
             style={{
               background: "#21313C",
               border: "none",
@@ -21,5 +22,4 @@ export const ProductsStatistics = () => {
       </div>
     </div>
   );
-}
-
+};

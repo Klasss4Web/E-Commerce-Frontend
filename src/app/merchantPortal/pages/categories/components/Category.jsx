@@ -1,18 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { adminDeleteCategory } from "../../../../../redux/actions/categoriesActions";
-import { EditCategoryModal } from "./EditCategoryModal";
 
-export const Category = ({ category, setRefresh }) => {
+export const Category = ({ category }) => {
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  const handleDeleteCategory = () => {
-     if (window.confirm("Are you sure??")) {
-       dispatch(adminDeleteCategory(category?._id, setRefresh));
-     }
+  // const handleDeleteCategory = () => {
+  //    if (window.confirm("Are you sure??")) {
+  //      dispatch(adminDeleteCategory(category?._id, setRefresh));
+  //    }
     
-  }
+  // }
   return (
     <div
       class="card"
@@ -26,7 +23,7 @@ export const Category = ({ category, setRefresh }) => {
       <img
         class="card-img-top"
         src={category?.image}
-        alt="Card image cap"
+        alt="cap"
         height={"150px"}
         style={{ borderRadius: "10px" }}
       />

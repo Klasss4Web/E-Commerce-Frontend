@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-
 import { RatingsTable } from "./RatingsTable";
 
-export const MainRatings = ({ orderId }) => {
+export const MainRatings = () => {
 
 
   return (

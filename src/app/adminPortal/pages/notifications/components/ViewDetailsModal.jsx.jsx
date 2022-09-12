@@ -1,15 +1,7 @@
-import React, { useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
-import { useDispatch } from "react-redux";
-import { updateCategoryAction } from "../../../../../redux/actions/categoriesActions";
-import { updateNotificationDetails } from "../../../../../redux/actions/notificationsActions";
 import { timeago } from "../../../../../utils/timeAgo";
 
 export const ViewDetails = ({
   loading,
-  error,
-  category,
-  setRefresh,
   notification,
   handleApprove,
 }) => {
@@ -86,7 +78,7 @@ export const ViewDetails = ({
                   </h6>
                   <h6>{notification?.product?.countInStock}</h6>
                 </div>
-                <img src={notification?.product?.image} />
+                <img src={notification?.product?.image} alt="" />
               </div>
             </div>
 

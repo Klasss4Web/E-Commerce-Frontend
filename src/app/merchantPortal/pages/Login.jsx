@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { login } from "../../../redux/actions/userActions";
 import Toast from "../../userPortal/components/loadingError/Toast";
-// import Header from "../components/Header";
 import Message from "../components/loadingError/Error";
 import Loading from "../components/loadingError/Loading";
 

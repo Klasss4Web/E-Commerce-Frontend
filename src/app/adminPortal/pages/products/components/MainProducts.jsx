@@ -18,12 +18,10 @@ export const MainProducts = ({ products, loading, error }) => {
   const [filteredData, setFilteredData] = useState(products);
 
   const adminDeleteProduct = useSelector((state) => state.adminDeleteProduct);
-  const { error: deleteError, success } = adminDeleteProduct;
+  const { success } = adminDeleteProduct;
 
   const adminGetCategories = useSelector((state) => state.adminGetCategories);
   const { categories } = adminGetCategories;
-
-  console.log("filteredData", filteredData);
 
   useEffect(() => {
     dispatch(adminListProducts());

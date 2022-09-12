@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { updateCategoryAction } from "../../../../../redux/actions/categoriesActions";
 import { updateNotificationDetails } from "../../../../../redux/actions/notificationsActions";
 
 export const RejectRequestModal = ({
   loading,
-  error,
-  category,
   setRefresh,
   notification,
 }) => {

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Message from '../../../../userPortal/components/loadingError/Error';
 import Loading from '../../../../userPortal/components/loadingError/Loading';
@@ -11,10 +10,10 @@ export const UserComponent = ({
   error,
   loading,
   value,
-  setValue,
   setRefresh,
   handleFilter,
 }) => {
+
   return (
     <section className="content-main">
       <div className="content-header">
@@ -86,7 +85,7 @@ export const UserComponent = ({
                           user?.image ||
                           "https://media.istockphoto.com/photos/girl-with-headphones-and-neon-lighting-stylized-3d-character-picture-id1330874201?b=1&k=20&m=1330874201&s=170667a&w=0&h=GL7X6kheNB4ip-Mw8B0aI3KbUfWCzRthJqCNv5qq2jg="
                         }
-                        alt={`Picture of ${user?.name}`}
+                        alt={`${user?.name}`}
                         style={{ height: "170px", width: "100%" }}
                       />
                     </div>

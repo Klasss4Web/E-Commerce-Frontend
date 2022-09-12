@@ -1,6 +1,5 @@
 import React from "react";
 import "../userPortal/App.css";
-// import "react-toastify/dist/ReactToastify.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeScreen from "../userPortal/screens/HomeScreen";
 import ProductPreviewScreen from "../userPortal/screens/ProductPreviewScreen";

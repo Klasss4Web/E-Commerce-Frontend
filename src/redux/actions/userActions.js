@@ -29,12 +29,7 @@ import {
 
 // LOGIN ACTIONS
 export const login = (email, password) => async (dispatch) => {
-  const ToastObjects = {
-    pauseOnFocusLoss: false,
-    draggable: false,
-    pauseOnHover: false,
-    autoClose: 2000,
-  };
+ 
 
   try {
     dispatch({

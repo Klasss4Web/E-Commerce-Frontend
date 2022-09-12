@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
-import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai"
+import { AiOutlineEye } from "react-icons/ai"
 import moment from "moment"
 import { BsTrash } from 'react-icons/bs'
 import { EditMerchantModal } from './EditMerchantModal'

@@ -13,6 +13,7 @@ export const Header = () => {
   const handleLogout = () => {
     dispatch(logout())
   }
+  
   return (
     <header className="main-header navbar">
       <div className="col-search">

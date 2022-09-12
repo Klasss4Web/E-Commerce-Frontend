@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { adminCreateCategoriesAction } from "../../../../../redux/actions/categoriesActions";
 import { adminCreateUser } from "../../../../../redux/actions/userActions";
 
-export const AddNewUserModal = ({ error, setRefresh }) => {
+export const AddNewUserModal = ({ setRefresh }) => {
   const [file, setFile] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -45,6 +45,7 @@ export const MainAddProduct = () => {
       setCountInStock(0);
       setDisplayImage();
     }
+    // eslint-disable-next-line
   }, [product, dispatch]);
 
   const handleCreateProduct = (e) => {
@@ -209,6 +210,7 @@ export const MainAddProduct = () => {
                 width="100%"
                 height={"300px"}
                 style={{ borderRadius: "10px" }}
+                alt=""
               />
             </div>
           </div>

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { merchantGetReviewsActions } from "../../../../redux/actions/productActions";
 import Message from "../../components/loadingError/Error";
 import Loading from "../../components/loadingError/Loading";
-// import { MainRatings } from "./components/MainRatings";
 import { RatingCard } from "./components/RatingCard";
 import { ImFileEmpty } from "react-icons/im"
 
@@ -13,8 +12,6 @@ export const RatingsPage = () => {
 
   const merchantReviews = useSelector((state) => state.merchantReviews);
   const { loading, error, reviews } = merchantReviews;
-
-  console.log("merchantReviews", merchantReviews);
 
   useEffect(() => {
     dispatch(merchantGetReviewsActions());

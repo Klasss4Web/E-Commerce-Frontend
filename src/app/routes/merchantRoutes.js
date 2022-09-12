@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../adminPortal/Admin.css";
 // import "react-toastify/dist/ReactToastify.css"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { AddProductPage } from "../merchantPortal/pages/AddProductPage";
 import { HomePage } from "../merchantPortal/pages/HomePage";
 import { OrderDetailsPage } from "../merchantPortal/pages/OrderDetailsPage";
@@ -25,12 +25,11 @@ const MerchantPortalRoutes = () => {
 
   
   const [toggleSide, setToggleSide] = useState(false);
-  const [showSidebar, setShowSideBar] = useState(true);
+  const [showSidebar] = useState(true);
   // const [isMobileScreen] = window.innerWidth < "700px";
   const [isMobileScreen] = useState(
     () => window.matchMedia("(max-width: 700px)")?.matches
   );
-  console.log("ism", isMobileScreen?.matches);
 
   const handleToggle = () => {
     setToggleSide((initial) => !initial);

@@ -1,7 +1,6 @@
 import React from 'react'
-import { BsTrash } from 'react-icons/bs';
 
-export const DeleteToast = ({ proceed, warningMsg }) => {
+export const DeleteToast = () => {
   return (
     <div>
       <button type="button" class="btn btn-primary" id="liveToastBtn">

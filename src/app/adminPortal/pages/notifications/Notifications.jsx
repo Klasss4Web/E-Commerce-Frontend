@@ -15,7 +15,7 @@ export const Notifications = () => {
 
   const adminUpdateNotification = useSelector((state) => state?.adminUpdateNotification);
 
-  const { error: errorUpdating, loading: loadingUpdates, success } = adminUpdateNotification;
+  const { error: errorUpdating, loading: loadingUpdates } = adminUpdateNotification;
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {

@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import { TransactionTable } from "./TransactionTable";
 
-import { TransactionTable, Orders } from "./TransactionTable";
-
-export const MainTransaction = ({ orderId }) => {
+export const MainTransaction = () => {
 
 
   return (

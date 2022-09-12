@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-
 import { RatingsTable } from "./RatingsTable";
 
 export const MainRatings = ({ orderId }) => {
-
 
   return (
     <section className="content-main">

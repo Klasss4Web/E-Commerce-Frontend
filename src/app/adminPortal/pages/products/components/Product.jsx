@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { adminDeleteProduct } from '../../../../../redux/actions/productActions'
 
-
 export const Product = ({ product }) => {
 
   const dispatch = useDispatch()
@@ -23,7 +22,7 @@ export const Product = ({ product }) => {
         <Link to={"#"} className="img-wrap">
           <img
             src={product?.image}
-            alt="Product Image"
+            alt="Product"
             style={{ height: "170px", width: "100%" }}
           />
         </Link>

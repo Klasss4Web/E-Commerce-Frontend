@@ -13,8 +13,7 @@ import {
   merchantListProducts,
 } from "./redux/actions/productActions";
 import { adminOrdersListAction } from "./redux/actions/orderActions";
-// import { UnAuthenticatedRoutes } from "./app/routes/unAuthenticatedRoutes";
-// import { adminListNotifications } from "./redux/actions/notificationsActions";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -25,23 +24,24 @@ function App() {
   const parsedData = JSON.parse(userData);
 
   // const decoded = jwtDecode(userData?.token);
+  const isAdmin = userInfo && userInfo?.isAdmin
+  const merchant = userInfo && userInfo?.userType === "merchant"
+  const token = parsedData?.token;
 
   useEffect(() => {
-    if (userInfo && userInfo?.isAdmin) {
+    if (isAdmin) {
       dispatch(adminListProducts());
       dispatch(adminOrdersListAction());
       dispatch(merchantListProducts());
       // dispatch(adminListNotifications());
     }
 
-    if (userInfo && userInfo?.userType === "merchant") {
-      //  dispatch(adminListProducts());
-      //  dispatch(adminOrdersListAction());
+    if (merchant) {
       dispatch(merchantListProducts());
     }
 
-    if (parsedData?.token) {
-      const decoded = jwtDecode(parsedData?.token);
+    if (token) {
+      const decoded = jwtDecode(token);
       const expiryDate = new Date(decoded?.exp * 1000);
       if (new Date() > expiryDate) {
         setIsLoggedIn(false);
@@ -53,7 +53,7 @@ function App() {
     } else {
       setIsLoggedIn(false);
     }
-  }, [dispatch, parsedData, userData]);
+  }, [dispatch, token, isAdmin, merchant]);
 
   if (parsedData?.token) {
     if (parsedData?.isAdmin) {

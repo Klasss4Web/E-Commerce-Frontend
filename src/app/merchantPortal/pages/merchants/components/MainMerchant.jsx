@@ -9,7 +9,8 @@ import { AddNewMerchantModal } from "./AddNewMerchantModal";
 
 import { MerchantTable } from "./MerchantTable";
 
-export const MainMerchant = ({ orderId }) => {
+export const MainMerchant = () => {
+
   const ToastObjects = {
     pauseOnFocusLoss: false,
     draggable: false,
@@ -26,7 +27,6 @@ export const MainMerchant = ({ orderId }) => {
     (state) => state.updateMerchantStatus
   );
   const {
-    error: updateStatusError,
     loading: updateStatusLoading,
     success: updateSuccess,
   } = updateMerchantStatus;
@@ -68,6 +68,7 @@ export const MainMerchant = ({ orderId }) => {
     }
 
     dispatch(adminMerchantListAction());
+    // eslint-disable-next-line
   }, [dispatch, updateSuccess, addMerchantSuccess, delSuccess]);
 
   return loading ? (
