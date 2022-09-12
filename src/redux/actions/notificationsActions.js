@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastObjects } from "../../app/adminPortal/components/loadingError/toastObject";
+import { baseUrl } from "../../app/services/requestUrl";
 import { ADMIN_GET_NOTIFICATIONS_FAILURE, ADMIN_GET_NOTIFICATIONS_REQUEST, ADMIN_GET_NOTIFICATIONS_SUCCESS, ADMIN_UPDATE_NOTIFICATIONS_FAILURE, ADMIN_UPDATE_NOTIFICATIONS_REQUEST, ADMIN_UPDATE_NOTIFICATIONS_SUCCESS, MERCHANT_GET_NOTIFICATIONS_FAILURE, MERCHANT_GET_NOTIFICATIONS_REQUEST, MERCHANT_GET_NOTIFICATIONS_SUCCESS } from "../constants/notificationConstants";
 import { logout } from "./userActions";
 
@@ -24,7 +25,7 @@ export const adminListNotifications = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `/api/notifications/admin/notifications`,
+      `${baseUrl}/api/notifications/admin/notifications`,
       config
     );
 console.log("datttta", data)
@@ -66,7 +67,7 @@ export const updateNotificationDetails =
       };
 
       const { data } = await axios.put(
-        `/api/notifications/admin/notifications/${payload._id}`,
+        `${baseUrl}/api/notifications/admin/notifications/${payload._id}`,
         payload,
         config
       );
@@ -110,7 +111,7 @@ export const merchantListNotifications = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `/api/notifications/merchant/notifications`,
+      `${baseUrl}/api/notifications/merchant/notifications`,
       config
     );
 // console.log("datttta", data)
@@ -148,7 +149,7 @@ export const merchantListNotifications = () => async (dispatch, getState) => {
 //       },
 //     };
 
-//     await axios.delete(`/api/notifications/admin/${productId}`, config);
+//     await axios.delete(`${baseUrl}/api/notifications/admin/${productId}`, config);
 
 //     dispatch({ type: ADMIN_DELETE_PRODUCT_SUCCESS });
 //   } catch (error) {

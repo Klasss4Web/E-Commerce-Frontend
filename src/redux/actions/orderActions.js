@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastObjects } from "../../app/adminPortal/components/loadingError/toastObject";
+import { baseUrl } from "../../app/services/requestUrl";
 import { CART_CLEAR_ITEMS } from "../constants/cartConstants";
 import {
   ADMIN_ORDER_DETAILS_FAILURE,
@@ -45,7 +46,7 @@ export const createOrderAction = (order) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(`/api/orders`, order, config);
+    const { data } = await axios.post(`${baseUrl}/api/orders`, order, config);
 
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
     dispatch({ type: CART_CLEAR_ITEMS, payload: data });
@@ -84,7 +85,7 @@ export const getOrderDetailsAction = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders/${id}`, config);
+    const { data } = await axios.get(`${baseUrl}/api/orders/${id}`, config);
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -122,7 +123,7 @@ export const orderPaymentAction =
       };
 
       const { data } = await axios.put(
-        `/api/orders/${orderId}/pay`,
+        `${baseUrl}/api/orders/${orderId}/pay`,
         paymentResult,
         config
       );
@@ -160,7 +161,7 @@ export const ordersListAction = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders`, config);
+    const { data } = await axios.get(`${baseUrl}/api/orders`, config);
 
     console.log("orderData", data);
 
@@ -198,7 +199,7 @@ export const adminOrdersListAction = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders/admin/orders`, config);
+    const { data } = await axios.get(`${baseUrl}/api/orders/admin/orders`, config);
 
     console.log("orderData", data);
 
@@ -237,7 +238,7 @@ export const admiGetOrderDetailsAction = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/orders/${id}`, config);
+    const { data } = await axios.get(`${baseUrl}/api/orders/${id}`, config);
 
     dispatch({ type: ADMIN_ORDER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -274,7 +275,7 @@ export const updatedDeliveryAction =
         },
       };
 
-      const { data } = await axios.put(`/api/orders/${payload?._id}/delivered`, payload, config);
+      const { data } = await axios.put(`${baseUrl}/api/orders/${payload?._id}/delivered`, payload, config);
 
       dispatch({ type: ADMIN_UPDATE_DELIVERY_SUCCESS, payload: data });
       setRefresh((prev) => !prev);

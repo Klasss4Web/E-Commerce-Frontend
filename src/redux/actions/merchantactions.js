@@ -1,4 +1,5 @@
 import axios from "axios"
+import { baseUrl } from "../../app/services/requestUrl";
 import { ADMIN_ADD_MERCHANT_FAILURE, ADMIN_ADD_MERCHANT_REQUEST, ADMIN_ADD_MERCHANT_SUCCESS, ADMIN_DELETE_MERCHANT_FAILURE, ADMIN_DELETE_MERCHANT_REQUEST, ADMIN_DELETE_MERCHANT_SUCCESS, ADMIN_GET_MERCHANT_FAILURE, ADMIN_GET_MERCHANT_REQUEST, ADMIN_GET_MERCHANT_SUCCESS, ADMIN_MERCHANT_LIST_REQUEST, ADMIN_MERCHANT_LIST_SUCCESS, ADMIN_UPDATE_MERCHANT_STATUS_FAILURE, ADMIN_UPDATE_MERCHANT_STATUS_REQUEST, ADMIN_UPDATE_MERCHANT_STATUS_SUCCESS } from "../constants/merchantConstant";
 import { logout } from "./userActions";
 
@@ -10,7 +11,7 @@ import { logout } from "./userActions";
 //       type: PRODUCT_DETAILS_REQUEST,
 //     });
 
-//     const { data } = await axios.get(`/api/products/${id}`);
+//     const { data } = await axios.get(`${baseUrl}/api/products/${id}`);
 //     console.log("dataaaa", data)
 //     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
 //   } catch (error) {
@@ -43,7 +44,7 @@ export const adminCreateMerchantAction = (payload) => async (dispatch, getState)
       },
     };
 
-    const {data} = await axios.post(`/api/merchants`, payload, config);
+    const {data} = await axios.post(`${baseUrl}/api/merchants`, payload, config);
 // console.log("merchants added", data)
     dispatch({ type: ADMIN_ADD_MERCHANT_SUCCESS, payload: data });
   } catch (error) {
@@ -80,7 +81,7 @@ export const adminMerchantListAction = () => async(dispatch, getState) => {
     };
 
 
-  const { data: {data} } = await axios.get(`/api/merchants`, config);
+  const { data: {data} } = await axios.get(`${baseUrl}/api/merchants`, config);
   // console.log("data", data)
 
   dispatch({ type: ADMIN_MERCHANT_LIST_SUCCESS, payload: data })
@@ -120,7 +121,7 @@ export const getMerchantDetails = (id) => async (dispatch, getState) => {
 
     const {
       data: { data },
-    } = await axios.get(`/api/merchants/${id}`, config);
+    } = await axios.get(`${baseUrl}/api/merchants/${id}`, config);
     // console.log("dataaaa", data);
     dispatch({ type: ADMIN_GET_MERCHANT_SUCCESS, payload: data });
   } catch (error) {
@@ -159,7 +160,7 @@ export const updateMerchantStatusAction = (merchantId, status) => async (dispatc
 
     const {
       data: { data },
-    } = await axios.put(`/api/merchants/${merchantId}`, status, config);
+    } = await axios.put(`${baseUrl}/api/merchants/${merchantId}`, status, config);
     // console.log("dataaaa", data)
     dispatch({ type: ADMIN_UPDATE_MERCHANT_STATUS_SUCCESS, payload: data });
     dispatch({ type: ADMIN_GET_MERCHANT_SUCCESS, payload: data });
@@ -199,7 +200,7 @@ export const adminDeleteMerchant = (merchantId) => async (dispatch, getState) =>
       },
     };
 
-    await axios.delete(`/api/merchants/${merchantId}`, config);
+    await axios.delete(`${baseUrl}/api/merchants/${merchantId}`, config);
 
     dispatch({ type: ADMIN_DELETE_MERCHANT_SUCCESS });
   } catch (error) {
@@ -235,7 +236,7 @@ export const adminDeleteMerchant = (merchantId) => async (dispatch, getState) =>
 //       //   },
 //       // };
 
-//     const { data } = await axios.get(`/api/products/${id}`);
+//     const { data } = await axios.get(`${baseUrl}/api/products/${id}`);
 //     console.log("dataaaa", data)
 //     dispatch({ type: ADMIN_EDIT_PRODUCT_SUCCESS, payload: data });
 //   } catch (error) {

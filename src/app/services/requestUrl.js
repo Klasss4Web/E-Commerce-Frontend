@@ -1,0 +1,1 @@
+export const baseUrl = "https://my-commerce-backend.herokuapp.com";

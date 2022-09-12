@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastObjects } from "../../app/adminPortal/components/loadingError/toastObject";
+import { baseUrl } from "../../app/services/requestUrl";
 import { ORDER_LIST_RESET } from "../constants/orderConstants";
 import {
   ADMIN_REGISTER_USER_FAILURE,
@@ -43,7 +44,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/login",
+      `${baseUrl}/api/users/login`,
       { email, password },
       config
     );
@@ -84,7 +85,7 @@ export const logout = () => (dispatch) => {
     type: GET_USERS_RESET,
   });
   //optional
-  window.location.href = "/login";
+  window.location.href = "/";
 };
 
 // REGISTER ACTIONS
@@ -101,7 +102,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users",
+      `${baseUrl}/api/users`,
       { name, email, password },
       config
     );
@@ -171,7 +172,7 @@ export const adminCreateUser =
       // };
 
       const { data } = await axios.post(
-        "/api/users/admin/create-user",
+        `${baseUrl}/api/users/admin/create-user`,
         payload,
         config
       );
@@ -215,7 +216,7 @@ export const getUserProfile = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users/profile`, config);
+    const { data } = await axios.get(`${baseUrl}/api/users/profile`, config);
 
     dispatch({ type: USER_PROFILE_SUCCESS, payload: data });
   } catch (error) {
@@ -251,7 +252,7 @@ export const updateProfile = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(`/api/users/profile`, user, config);
+    const { data } = await axios.put(`${baseUrl}/api/users/profile`, user, config);
 
     dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
@@ -290,7 +291,7 @@ export const updateAdminProfile = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(`/api/users/admin/profile`, user, config);
+    const { data } = await axios.put(`${baseUrl}/api/users/admin/profile`, user, config);
     toast.success("Profile successfully updated", ToastObjects);
 
     dispatch({ type: ADMIN_UPDATE_PROFILE_SUCCESS, payload: data });
@@ -328,7 +329,7 @@ export const getUsers = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get("/api/users", config);
+    const { data } = await axios.get(`${baseUrl}/api/users`, config);
 
     dispatch({ type: GET_USERS_SUCCESS, payload: data });
   } catch (error) {

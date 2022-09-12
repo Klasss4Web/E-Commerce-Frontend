@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastObjects } from "../../app/adminPortal/components/loadingError/toastObject";
+import { baseUrl } from "../../app/services/requestUrl";
 import {
   ADMIN_ADD_CATEGORIES_FAILURE,
   ADMIN_ADD_CATEGORIES_REQUEST,
@@ -82,7 +83,7 @@ export const adminCreateCategoriesAction =
 payload.image=imgUrlsFromCloudinary
       const {
         data: { data },
-      } = await axios.post(`/api/categories/add-categories`, payload, config);
+      } = await axios.post(`${baseUrl}/api/categories/add-categories`, payload, config);
       console.log("merchants added", data);
       dispatch({ type: ADMIN_ADD_CATEGORIES_SUCCESS, payload: data });
     } catch (error) {
@@ -120,7 +121,7 @@ export const adminCategoriesListAction = () => async (dispatch, getState) => {
 
     const {
       data: { data },
-    } = await axios.get(`/api/categories`, config);
+    } = await axios.get(`${baseUrl}/api/categories`, config);
     console.log("data", data);
 
     dispatch({ type: ADMIN_CATEGORIES_LIST_SUCCESS, payload: data });
@@ -159,7 +160,7 @@ export const getCategoryDetails = (id) => async (dispatch, getState) => {
 
     const {
       data: { data },
-    } = await axios.get(`/api/categories/${id}`, config);
+    } = await axios.get(`${baseUrl}/api/categories/${id}`, config);
     console.log("dataaaa", data);
     dispatch({ type: ADMIN_GET_CATEGORY_SUCCESS, payload: data });
   } catch (error) {
@@ -199,7 +200,7 @@ export const updateCategoryAction =
 
       const {
         data: { data },
-      } = await axios.put(`/api/categories/${payload?._id}`, payload, config);
+      } = await axios.put(`${baseUrl}/api/categories/${payload?._id}`, payload, config);
       console.log("dataaaa", data);
       dispatch({ type: ADMIN_UPDATE_CATEGORY_STATUS_SUCCESS, payload: data });
       dispatch({ type: ADMIN_GET_CATEGORY_SUCCESS, payload: data });
@@ -240,7 +241,7 @@ export const adminDeleteCategory =
         },
       };
 
-      await axios.delete(`/api/categories/${categoryId}`, config);
+      await axios.delete(`${baseUrl}/api/categories/${categoryId}`, config);
 
       dispatch({ type: ADMIN_DELETE_CATEGORY_SUCCESS });
       toast.success("Category deleted successfully", ToastObjects);
@@ -278,7 +279,7 @@ export const adminDeleteCategory =
 //       //   },
 //       // };
 
-//     const { data } = await axios.get(`/api/products/${id}`);
+//     const { data } = await axios.get(`${baseUrl}/api/products/${id}`);
 //     console.log("dataaaa", data)
 //     dispatch({ type: ADMIN_EDIT_PRODUCT_SUCCESS, payload: data });
 //   } catch (error) {

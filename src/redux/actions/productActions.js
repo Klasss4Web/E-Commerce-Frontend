@@ -38,6 +38,7 @@ import {
 } from "../constants/productConstants";
 import axios from "axios";
 import { logout } from "./userActions";
+import { baseUrl } from "../../app/services/requestUrl";
 
 // ALL PRODUCTS
 export const listProducts =
@@ -49,7 +50,7 @@ export const listProducts =
       });
 
       const { data } = await axios.get(
-        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+        `${baseUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
       );
 
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
@@ -71,7 +72,7 @@ export const productDetails = (id) => async (dispatch) => {
       type: PRODUCT_DETAILS_REQUEST,
     });
 
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`${baseUrl}/api/products/${id}`);
     console.log("dataaaa", data);
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -104,7 +105,7 @@ export const productReviewAction =
         },
       };
 
-      await axios.post(`/api/products/${productId}/review`, review, config);
+      await axios.post(`${baseUrl}/api/products/${productId}/review`, review, config);
       dispatch({ type: PRODUCT_REVIEW_SUCCESS });
     } catch (error) {
       const message =
@@ -161,7 +162,7 @@ export const adminCreateProduct =
         });
 
       const { data } = await axios.post(
-        `/api/products/admin/add-product`,
+        `${baseUrl}/api/products/admin/add-product`,
         {
           name,
           price,
@@ -207,7 +208,7 @@ export const adminListProducts = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/products/admin/products`, config);
+    const { data } = await axios.get(`${baseUrl}/api/products/admin/products`, config);
 
     dispatch({ type: ADMIN_PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -243,7 +244,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     //   },
     // };
 
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`${baseUrl}/api/products/${id}`);
     console.log("dataaaa", data);
     dispatch({ type: ADMIN_EDIT_PRODUCT_SUCCESS, payload: data });
   } catch (error) {
@@ -280,7 +281,7 @@ export const updateProductDetails = (payload) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `/api/products/admin/${payload._id}`,
+      `${baseUrl}/api/products/admin/${payload._id}`,
       payload,
       config
     );
@@ -320,7 +321,7 @@ export const adminDeleteProduct = (productId) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`/api/products/admin/${productId}`, config);
+    await axios.delete(`${baseUrl}/api/products/admin/${productId}`, config);
 
     dispatch({ type: ADMIN_DELETE_PRODUCT_SUCCESS });
   } catch (error) {
@@ -356,7 +357,7 @@ export const adminGetReviewsActions = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/products/admin/reviews`, config);
+    const { data } = await axios.get(`${baseUrl}/api/products/admin/reviews`, config);
 
     dispatch({ type: ADMIN_GET_REVIEWS_SUCCESS, payload: data });
   } catch (error) {
@@ -414,7 +415,7 @@ export const merchantCreateProduct =
         });
 
       const { data } = await axios.post(
-        `/api/products/merchant/add-product`,
+        `${baseUrl}/api/products/merchant/add-product`,
         {
           name,
           price,
@@ -460,7 +461,7 @@ export const merchantListProducts = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/products/merchant/products`, config);
+    const { data } = await axios.get(`${baseUrl}/api/products/merchant/products`, config);
 
     dispatch({ type: MERCHANT_PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -496,7 +497,7 @@ export const merchantGetReviewsActions = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/products/merchant/reviews`, config);
+    const { data } = await axios.get(`${baseUrl}/api/products/merchant/reviews`, config);
 
     dispatch({ type: MERCHANT_GET_REVIEWS_SUCCESS, payload: data });
     
