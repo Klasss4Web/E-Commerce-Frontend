@@ -93,7 +93,7 @@ export const MainMerchant = () => {
       <div className="card mb-4 shadow-sm">
         <header className="card-header bg-white">
           <div className="row gx-3 py-3">
-            <div className="col-lg-4 col-md-6 me-auto">
+            <div className="col-lg-4 col-md-6 me-auto  mb-2 mb-md-0">
               <input
                 type={"text"}
                 placeholder="Search by name or email"
@@ -104,7 +104,7 @@ export const MainMerchant = () => {
                 }
               />
             </div>
-            <div className="col-lg-2 col-6 col-md-3">
+            <div className="col-lg-2 col-6 col-md-3 col-12 p-2">
               <select
                 className="form-select"
                 onChange={(e) => setStatus(e.target.value)}

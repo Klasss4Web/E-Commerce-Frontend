@@ -42,7 +42,7 @@ export const MainProducts = ({ products, loading, error }) => {
       <div className="card mb-4 shadow-sm">
         <header className="card-header bg-white">
           <div className="row gx-3 py-3">
-            <div className="col-lg-4 col-md-6 me-auto">
+            <div className="col-lg-4 col-md-6 me-auto mb-2 mb-md-0">
               <input
                 type="search"
                 placeholder="Search..."

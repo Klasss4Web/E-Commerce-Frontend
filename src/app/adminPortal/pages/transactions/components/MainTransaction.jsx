@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 
 import { TransactionTable } from "./TransactionTable";
-// import { useFetch } from "./useFetch";
+import { useFetch } from "./useFetch";
 
 export const MainTransaction = () => {
 
@@ -14,9 +14,9 @@ export const MainTransaction = () => {
   //   window.print()
   // }
 
-  // const {fetchedData, loading} = useFetch("https://jsonplaceholder.typicode.com/todos");
+  const {fetchedData, loading} = useFetch("https://jsonplaceholder.typicode.com/todos");
 
-  // console.log("fetchedData", fetchedData, "loading", loading)
+  console.log("fetchedData", fetchedData, "loading", loading)
 
   //  window.addEventListener("beforeprint", (e) => {
   //   e.preventDefault()

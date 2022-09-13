@@ -30,7 +30,7 @@ export const UserComponent = ({
         <Toast />
         <header className="card-header">
           <div className="row gx-3">
-            <div className="col-lg-4 col-md-6 me-auto">
+            <div className="col-lg-4 col-md-6 me-auto mb-2 mb-md-0">
               <input
                 type="text"
                 placeholder="Search User"
