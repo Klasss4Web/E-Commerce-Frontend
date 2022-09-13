@@ -34,10 +34,10 @@ export const EditCategoryModal = ({ loading, error, category, setRefresh }) => {
       <div
         // id={category?._id}
         type="button"
-        class="btn btn-primary"
+        className="px-2"
         data-bs-toggle="modal"
         data-bs-target={`#staticBackdropModal1${category?._id}`}
-        className="px-2"
+      
         style={{
           border: "1px solid green",
           borderRadius: "5px",
@@ -48,28 +48,28 @@ export const EditCategoryModal = ({ loading, error, category, setRefresh }) => {
       </div>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id={`staticBackdropModal1${category?._id}`}
         data-bs-backdrop="static"
         data-bs-keyboard="false"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="staticBackdropLabel1"
         aria-hidden="true"
       >
-        <div class="modal-dialog  modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel1">
+        <div className="modal-dialog  modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="staticBackdropLabel1">
                 Edit Category
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body" style={{ width: "100%" }}>
+            <div className="modal-body" style={{ width: "100%" }}>
               <label htmlFor="name">Name</label>
 
               <input
@@ -168,18 +168,18 @@ export const EditCategoryModal = ({ loading, error, category, setRefresh }) => {
               ></textarea>
             </div>
 
-            <div class="modal-footer">
+            <div className="modal-footer">
               {loading ? (
                 <>
                   <button>
                     {" "}
-                    <i class="fa fa-spinner fa-spin"></i>Loading
+                    <i className="fa fa-spinner fa-spin"></i>Loading
                   </button>
                 </>
               ) : (
                 <button
                   type="button"
-                  class="btn btn-primary mb-4"
+                  className="btn btn-primary mb-4"
                   data-bs-dismiss="modal"
                   disabled={!name || !image}
                   onClick={handleUpdateCategory}
@@ -189,7 +189,7 @@ export const EditCategoryModal = ({ loading, error, category, setRefresh }) => {
               )}
               {/* <button
                 type="button"
-                class="btn btn-primary mb-4"
+                className="btn btn-primary mb-4"
                 data-bs-dismiss="modal"
                 disabled={!name || !image}
                 onClick={handleCreate}

@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="btn btn-secondary"
+  className="btn btn-secondary"
   data-container="body"
   data-toggle="popover"
   data-placement="bottom"

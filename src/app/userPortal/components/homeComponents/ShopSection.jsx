@@ -10,8 +10,7 @@ import Loading from "../loadingError/Loading";
 import Message from "../loadingError/Error";
 
 export const ShopSection = ({ keyword, pageNumber }) => {
-  // const dummyImage =
-  //   "https://m.media-amazon.com/images/I/61iyNZf8IvL._AC_UL320_.jpg";
+
 
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
@@ -21,15 +20,6 @@ export const ShopSection = ({ keyword, pageNumber }) => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
-  // const [products, setProducts] = useState([])
-
-  // useEffect(()=> {
-  //   const fetchData = async() => {
-  //     const {data} = await axios.get("/api/products");
-  //     setProducts(data)
-  //   }
-  //   fetchData()
-  // },[])
 
   return (
     <div>

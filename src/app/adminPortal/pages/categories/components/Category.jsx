@@ -16,21 +16,21 @@ export const Category = ({ category, setRefresh }) => {
 
   return (
     <div
-      class="card category-card"
+      className="card category-card"
  
     >
       <img
-        class="card-img-top"
+        className="card-img-top"
         src={category?.image}
         alt="cap"
         height={"150px"}
         style={{ borderRadius: "10px" }}
       />
       <div
-        class="card-body"
+        className="card-body"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <p class="card-text">{category?.name}</p>
+        <p className="card-text">{category?.name}</p>
         <div
           className=""
           style={{

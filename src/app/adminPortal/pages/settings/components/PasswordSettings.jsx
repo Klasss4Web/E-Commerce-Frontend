@@ -12,7 +12,7 @@ export const PasswordSettings = () => {
           }}
         >
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="oldPassword">Old Password</label>
+            <label htmlFor="oldPassword">Old Password</label>
             <input
               type="password"
               className="form-control"
@@ -22,7 +22,7 @@ export const PasswordSettings = () => {
           </div>
 
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="newPassword">New Password</label>
+            <label htmlFor="newPassword">New Password</label>
             <input
               type="password"
               className="form-control"
@@ -40,7 +40,7 @@ export const PasswordSettings = () => {
           }}
         >
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="confirm">Confirm Password</label>
+            <label htmlFor="confirm">Confirm Password</label>
             <input
               type="password"
               className="form-control"

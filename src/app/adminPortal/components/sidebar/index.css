@@ -17,6 +17,7 @@
   padding: 30px 0 10px 10px;
   /* padding-right: 0px; */
   color: #2a2047;
+  z-index: 1200;
   /* border-top-right-radius: 25px; */
 }
 .brand-style {

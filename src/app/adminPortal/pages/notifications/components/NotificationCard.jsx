@@ -16,8 +16,6 @@ export const NotificationCard = ({ notifications, setRefresh, loading }) => {
       _id: notification?._id,
     };
 
-    console.log("payyy", payload)
-
     dispatch(updateNotificationDetails(payload, setRefresh));
   };
 
@@ -57,7 +55,7 @@ export const NotificationCard = ({ notifications, setRefresh, loading }) => {
                 >
                   {loading ? (
                     <p id={`${notification?._id}`}>
-                      <i class="fa fa-spinner fa-spin mr-2"></i>Loading...
+                      <i className="fa fa-spinner fa-spin mr-2"></i>Loading...
                     </p>
                   ) : (
                     "Approve"

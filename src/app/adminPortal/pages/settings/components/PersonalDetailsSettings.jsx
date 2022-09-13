@@ -91,7 +91,7 @@ export const PersonalDetailsSettings = () => {
           }}
         >
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="exampleFormControlInput1">Name</label>
+            <label htmlFor="exampleFormControlInput1">Name</label>
             <input
               type="text"
               className="form-control"
@@ -103,7 +103,7 @@ export const PersonalDetailsSettings = () => {
           </div>
 
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               className="form-control"
@@ -123,7 +123,7 @@ export const PersonalDetailsSettings = () => {
           }}
         >
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="phone">Phone Number</label>
+            <label htmlFor="phone">Phone Number</label>
             <input
               type="text"
               className="form-control"
@@ -135,7 +135,7 @@ export const PersonalDetailsSettings = () => {
           </div>
 
           <div className="form-group" style={{ width: "49%" }}>
-            <label for="designation">Designation</label>
+            <label htmlFor="designation">Designation</label>
             <input
               type="text"
               className="form-control"
@@ -145,7 +145,7 @@ export const PersonalDetailsSettings = () => {
           </div>
         </div>
         <div className="form-group my-4">
-          <label for="exampleFormControlTextarea1">Bio</label>
+          <label htmlFor="exampleFormControlTextarea1">Bio</label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
@@ -158,7 +158,7 @@ export const PersonalDetailsSettings = () => {
             <>
               <button>
                 {" "}
-                <i class="fa fa-spinner fa-spin"></i>Loading
+                <i className="fa fa-spinner fa-spin"></i>Loading
               </button>
             </>
           ) : (

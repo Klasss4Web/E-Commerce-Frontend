@@ -34,7 +34,7 @@ export const IntegrationSettings = () => {
           <p style={{ marginRight: "0px" }}>Zoom</p>
 
           <img
-            class="btn"
+            className="btn"
             data-toggle="collapse"
             href="#multiCollapseExample1"
             role="button"
@@ -49,7 +49,7 @@ export const IntegrationSettings = () => {
             id="multiCollapseExample1"
             style={{ position: "absolute", top: "57%" }}
           >
-            <div class="card card-body">
+            <div className="card card-body">
               <h5>API Key</h5>
               <hr />
               <input
@@ -73,7 +73,7 @@ export const IntegrationSettings = () => {
         >
           <p style={{ marginRight: "0px" }}>Meet</p>
           <img
-            class="btn"
+            className="btn"
             data-toggle="collapse"
             href="#multiCollapseExample2"
             role="button"
@@ -92,7 +92,7 @@ export const IntegrationSettings = () => {
               left: "55%",
             }}
           >
-            <div class="card card-body">
+            <div className="card card-body">
               <h5>API Key</h5>
               <hr />
               <input

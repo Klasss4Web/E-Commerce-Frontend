@@ -292,7 +292,7 @@ transform: scale(1.05);
 }
 
 .box-info {
-  width: 80%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -388,4 +388,40 @@ transform: scale(1.05);
 .greet {
   display: block;
   color: orange
+}
+
+/**Styling scrollable elements*/
+.reveal-onscroll {
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .reveal-onscroll .container{
+  margin: 100px;
+} */
+.reveal-onscroll h1{
+  font-size: 3rem;
+  margin: 20px;
+}
+.reveal-onscroll h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.reveal-onscroll .text-container{
+   display: flex;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }

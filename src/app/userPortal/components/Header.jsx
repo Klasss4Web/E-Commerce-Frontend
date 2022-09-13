@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "../../../redux/actions/userActions";
-import { greet } from "../../../utils/greet";
+// import { greet } from "../../../utils/greet";
 import logo from "../../adminPortal/assets/logo.png";
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
               <p>+234 703 560 7059</p>
               <p>info@ecommerce.ng</p>
             </div>
-            <div className="col-12 col-lg-6 d-flex justify-content-between">
+            <div className="col-12 col-lg-6 d-flex justify-content-between align-items-center">
               <p className="d-block d-md-none" style={{ color: "#fff" }}>
                 info@ecommerce.ng
               </p>
@@ -58,10 +58,12 @@ const Header = () => {
                   <i className="fab fa-youtube"></i>
                 </Link>
               </div>
-              <span style={{ color: "#fff" }}>
+              <span style={{ color: "#fff"}}>
                 Hi, {userInfo?.name || "Guest"}
               </span>
-              <span className="greet">{greet()}</span>
+              {/* <span className="greet" style={{ fontSize: "12px" }}>
+                {greet()}
+              </span> */}
             </div>
 
             {/* <p>Hi, {userInfo?.name}</p> */}

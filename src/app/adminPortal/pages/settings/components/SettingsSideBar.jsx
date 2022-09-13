@@ -108,7 +108,7 @@ export const SettingsSideBar = () => {
           >
             <div style={{ width: "49%" }}>
               <div className="form-group my-3" style={{ width: "100%" }}>
-                <label for="color">Company Name</label>
+                <label htmlFor="color">Company Name</label>
                 <input
                   style={{ height: "50px" }}
                   type="text"
@@ -116,7 +116,7 @@ export const SettingsSideBar = () => {
                   id="name"
                   placeholder="name"
                 />
-                <label for="email">Support Email</label>
+                <label htmlFor="email">Support Email</label>
                 <input
                   style={{ height: "50px" }}
                   type="email"
@@ -124,7 +124,7 @@ export const SettingsSideBar = () => {
                   id="email"
                   placeholder="support@ecommerce.com"
                 />
-                <label for="phone">Support Line</label>
+                <label htmlFor="phone">Support Line</label>
                 <input
                   style={{ height: "50px" }}
                   type="text"
@@ -134,7 +134,7 @@ export const SettingsSideBar = () => {
                 />
               </div>
               <div className="form-group my-3" style={{ width: "100%" }}>
-                <label for="color">Brand Color</label>
+                <label htmlFor="color">Brand Color</label>
                 <input
                   style={{ height: "50px" }}
                   type="color"
@@ -142,7 +142,7 @@ export const SettingsSideBar = () => {
                   id="color"
                   placeholder="Color"
                 />
-                <label for="logo">Logo</label>
+                <label htmlFor="logo">Logo</label>
                 <input
                   type="file"
                   onChange={(e) => {

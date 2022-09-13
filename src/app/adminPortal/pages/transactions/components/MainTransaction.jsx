@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 import { TransactionTable } from "./TransactionTable";
-import { useFetch } from "./useFetch";
+// import { useFetch } from "./useFetch";
 
 export const MainTransaction = () => {
 
-  const [state, setState] = useState("InitialState")
+  // const [state, setState] = useState("InitialState")
 
-  const handleClick = () => {
-    setState(() => "Final State")
-    console.log("Clicked Inside", state)
+  // const handleClick = () => {
+  //   setState(() => "Final State")
+  //   console.log("Clicked Inside", state)
     
-    window.print()
-  }
+  //   window.print()
+  // }
 
-  const {fetchedData, loading} = useFetch("https://jsonplaceholder.typicode.com/todos");
+  // const {fetchedData, loading} = useFetch("https://jsonplaceholder.typicode.com/todos");
 
-  console.log("fetchedData", fetchedData, "loading", loading)
+  // console.log("fetchedData", fetchedData, "loading", loading)
 
   //  window.addEventListener("beforeprint", (e) => {
   //   e.preventDefault()
@@ -28,7 +28,7 @@ export const MainTransaction = () => {
   //   alert("Printed")
   // })
 
-  console.log("Clicked Outside", state);
+  // console.log("Clicked Outside", state);
 
   return (
     <section className="content-main">
@@ -44,9 +44,9 @@ export const MainTransaction = () => {
                 placeholder="Search..."
                 className="form-control p-2"
               />
-              <button onClick={handleClick}>Click Me</button>
+              {/* <button onClick={handleClick}>Click Me</button> */}
             </div>
-            <div className="col-lg-2 col-6 col-md-3">
+            <div className="col-lg-2 col-12 mt-2 mt-md-0 col-md-3">
               <select className="form-select">
                 <option>Status</option>
                 <option>Latest</option>

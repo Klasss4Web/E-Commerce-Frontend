@@ -50,7 +50,7 @@ export const EditMerchantModal = ({ data }) => {
           id={`staticBackdrop${data?._id}`}
           data-bs-backdrop="static"
           data-bs-keyboard="false"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby={data?.email}
           aria-hidden="true"
         >
@@ -69,7 +69,7 @@ export const EditMerchantModal = ({ data }) => {
               </div>
 
               <div className="modal-body" style={{ width: "100%" }}>
-                <label for="status">Status</label>
+                <label htmlFor="status">Status</label>
                 <select
                   placeholder="Select status"
                   style={{

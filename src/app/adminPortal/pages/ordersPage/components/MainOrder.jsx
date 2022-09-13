@@ -39,7 +39,7 @@ export const MainOrder = () => {
                 }
               />
             </div>
-            <div className="col-lg-2 col-6 col-md-3">
+            <div className="col-lg-2 col-12 col-md-3 mt-3 mt-md-0">
               <select
                 className="form-select"
                 onChange={(e) => setStatus(e.target.value)}

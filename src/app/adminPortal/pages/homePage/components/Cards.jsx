@@ -55,7 +55,7 @@ export const Cards = ({ orders, products }) => {
           className="card card-body mb-4 card-animate p-0"
           style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
         >
-          <img class="card-img card-img_bg" src={bgThree} alt="" />
+          <img className="card-img card-img_bg" src={bgThree} alt="" />
           <article className="iconText  card-img-overlay">
             <span className="icon icon-sm rounded-circle alert-primary">
               <i className="text-primary fas fa-shopping-basket"></i>

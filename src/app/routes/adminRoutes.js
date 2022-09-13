@@ -17,32 +17,30 @@ import { CounterPractice } from "../adminPortal/pages/CounterPractice";
 import { Settings } from "../adminPortal/pages/settings/Settings";
 import { Profile } from "../adminPortal/pages/profile/Profile";
 import { AddProductPage } from "../adminPortal/pages/products/components/AddProductPage";
- import { ProductEditPage } from "../adminPortal/pages/products/components/ProductEditPage";
+import { ProductEditPage } from "../adminPortal/pages/products/components/ProductEditPage";
 import { OrderDetailsPage } from "../adminPortal/pages/ordersPage/orderDetailsPage/OrderDetailsPage";
 import { OrderPage } from "../adminPortal/pages/ordersPage/orderPage/OrderPage";
 import { adminListNotifications } from "../../redux/actions/notificationsActions";
 import { useDispatch } from "react-redux";
 
-
 const AdminPortalRoutes = () => {
-
   const [toggleSide, setToggleSide] = useState(false);
   const [showSidebar] = useState(true);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [isMobileScreen] = useState(
     () => window.matchMedia("(max-width: 700px)")?.matches
   );
 
-   const handleToggle = () => {
-     setToggleSide((initial) => !initial);
-   };
+  const handleToggle = () => {
+    setToggleSide((initial) => !initial);
+  };
 
-    useEffect(() => {
-      if (isMobileScreen) {
-        setToggleSide((initial) => !initial);
-      }
-      dispatch(adminListNotifications());
-    }, [isMobileScreen, dispatch]);
+  useEffect(() => {
+    if (isMobileScreen) {
+      setToggleSide((initial) => !initial);
+    }
+    dispatch(adminListNotifications());
+  }, [isMobileScreen, dispatch]);
 
   return (
     <div className={`app-container`}>
@@ -98,6 +96,6 @@ const AdminPortalRoutes = () => {
       </Router>
     </div>
   );
-}
+};
 
 export default AdminPortalRoutes;

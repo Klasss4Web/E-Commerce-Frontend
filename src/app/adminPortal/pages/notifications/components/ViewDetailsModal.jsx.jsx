@@ -41,20 +41,20 @@ export const ViewDetails = ({
         aria-labelledby="staticBackdropLabel1"
         aria-hidden="true"
       >
-        <div class="modal-dialog  modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel1">
+        <div className="modal-dialog  modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="staticBackdropLabel1">
                 {notification?.title}
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body" style={{ width: "100%" }}>
+            <div className="modal-body" style={{ width: "100%" }}>
               <h5 className="mb-1">Description</h5>
               <h6>{notification?.description}</h6>
               <hr />
@@ -83,12 +83,12 @@ export const ViewDetails = ({
             </div>
 
             {notification?.status === "Pending" ? (
-              <div class="modal-footer">
+              <div className="modal-footer">
                 {loading ? (
                   <>
                     <button>
                       {" "}
-                      <i class="fa fa-spinner fa-spin"></i>Loading
+                      <i className="fa fa-spinner fa-spin"></i>Loading
                     </button>
                   </>
                 ) : (

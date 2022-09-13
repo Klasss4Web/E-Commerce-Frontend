@@ -15,7 +15,6 @@ export const HomeScreen = ({ match }) => {
     <div>
       {/* <Header /> */}
       <ShopSection keyword={keyword} pageNumber={pageNumber} />
-      {/* <CallToActionSection /> */}
       <ContactInfo />
       <Footer />
     </div>

@@ -32,7 +32,7 @@ export const Header = ({ toggle, sideBarActive, showSidebar }) => {
         <form className="searchform">
           <div
             className="input-group"
-            onClick={() => history.push("/dashboard")}
+            // onClick={() => history.push("/dashboard")}
           >
             <img
               src={logo}
@@ -41,12 +41,13 @@ export const Header = ({ toggle, sideBarActive, showSidebar }) => {
               height="30px"
               cursor="pointer"
               style={{ cursor: "pointer" }}
+              onClick={() => history.push("/dashboard")}
             />
             {showSidebar && (
               <i
-                className="md-28 fas fa-bars"
+                className="md-28 fas fa-bars d-md-none"
                 cursor="pointer"
-                onClick={()=>handleToggle()}
+                onClick={() => handleToggle()}
               ></i>
             )}
 
