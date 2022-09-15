@@ -58,7 +58,7 @@ const Header = () => {
                   <i className="fab fa-youtube"></i>
                 </Link>
               </div>
-              <span style={{ color: "#fff"}}>
+              <span style={{ color: "#fff" }}>
                 Hi, {userInfo?.name || "Guest"}
               </span>
               {/* <span className="greet" style={{ fontSize: "12px" }}>
@@ -133,7 +133,7 @@ const Header = () => {
                     </div>
                   )}
 
-                  <Link
+                  {/* <Link
                     className="cart-mobile"
                     to="/cart"
                     style={{ position: "relative" }}
@@ -143,6 +143,18 @@ const Header = () => {
                       class="fa fa-shopping-cart"
                       aria-hidden="true"
                       style={{ fontSize: "40px", color: "#264653" }}
+                    ></i>
+                  </Link> */}
+                  <Link
+                    className="cart-bag"
+                    to="/cart"
+                    data-count={cartItems?.length}
+                  >
+                    {/* <span className="badge">{cartItems?.length}</span> */}
+                    <i
+                      class="fa fa-shopping-cart shopping-cart-bag"
+                      aria-hidden="true"
+                      style={{ fontSize: "28px", color: "#264653" }}
                     ></i>
                   </Link>
 
@@ -257,14 +269,27 @@ const Header = () => {
                   </>
                 )}
 
-                <Link className="" to="/cart" style={{ position: "relative" }}>
-                  <span className="badge">{cartItems?.length}</span>
+                <Link
+                  className="cart-bag"
+                  to="/cart"
+                  data-count={cartItems?.length}
+                >
+                  {/* <span className="badge">{cartItems?.length}</span> */}
                   <i
                     class="fa fa-shopping-cart"
                     aria-hidden="true"
                     style={{ fontSize: "40px", color: "#264653" }}
                   ></i>
                 </Link>
+
+                {/* <Link className="" to="/cart" style={{ position: "relative" }}>
+                  <span className="badge">{cartItems?.length}</span>
+                  <i
+                    class="fa fa-shopping-cart"
+                    aria-hidden="true"
+                    style={{ fontSize: "40px", color: "#264653" }}
+                  ></i>
+                </Link> */}
               </div>
             </div>
           </div>

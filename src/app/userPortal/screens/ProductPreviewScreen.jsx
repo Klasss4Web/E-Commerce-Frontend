@@ -1,5 +1,8 @@
 // import axios from 'axios'
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 // import Header from "../components/Header";
@@ -7,15 +10,18 @@ import { Rating } from "../components/homeComponents/Rating";
 import Message from "../components/loadingError/Error";
 import Loading from "../components/loadingError/Loading";
 import { addItemToCart } from "../../../redux/actions/cartActions";
-import { productDetails, productReviewAction } from "../../../redux/actions/productActions";
+import {
+  productDetails,
+  productReviewAction,
+} from "../../../redux/actions/productActions";
 import { PRODUCT_REVIEW_RESET } from "../../../redux/constants/productConstants";
 import moment from "moment";
 
 const ProductPreviewScreen = ({ history, match }) => {
-
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [addClass, setAddClass] = useState(false)
 
   const productId = match.params.id;
   const dispatch = useDispatch();
@@ -23,10 +29,8 @@ const ProductPreviewScreen = ({ history, match }) => {
   const singleProductDetails = useSelector((state) => state.productDetails);
   const { error, loading, product } = singleProductDetails;
 
-  
-
   const productReviews = useSelector((state) => state.productReviews);
-  
+
   const {
     error: createReviewError,
     loading: createReviewLoading,
@@ -35,7 +39,6 @@ const ProductPreviewScreen = ({ history, match }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-  
 
   useEffect(() => {
     if (createReviewSuccess) {
@@ -49,8 +52,14 @@ const ProductPreviewScreen = ({ history, match }) => {
 
   const addToCart = (e) => {
     e.preventDefault();
+    // 👇️ add class on click
+    //  e.currentTarget.classList.add('zoom');
+    
     dispatch(addItemToCart(productId, quantity));
-    history.push(`/cart/${productId}?qty=${quantity}`);
+    const navigate = () => history.push(`/cart/${productId}?qty=${quantity}`);
+    setTimeout(() => navigate(), 1600);
+    setAddClass(true);
+
   };
 
   // const [product, setProduct] = useState({})
@@ -64,9 +73,9 @@ const ProductPreviewScreen = ({ history, match }) => {
   // },[match])
 
   const handleReviewHandler = (e) => {
-    e.preventDefault()
-    dispatch(productReviewAction(productId, {rating, comment}));
-  }
+    e.preventDefault();
+    dispatch(productReviewAction(productId, { rating, comment }));
+  };
 
   return (
     <div>
@@ -83,6 +92,13 @@ const ProductPreviewScreen = ({ history, match }) => {
                 <div className="single-image">
                   <img src={product?.image} alt={product?.name} />
                 </div>
+                <img
+                  className={addClass ? "zoom" : ""}
+                  width="60px"
+                  height={"40px"}
+                  src={product?.image}
+                  alt={product?.name}
+                />
               </div>
               <div className="col-md-6">
                 <div className="product-dtl">

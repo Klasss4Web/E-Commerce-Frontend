@@ -124,6 +124,14 @@ body .offcanvas-active {
   border-right: 1px solid rgba(108, 117, 125, 0.25);
 }
 
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #2A9D8F;
+}
+
+
+
 .navbar-aside .aside-top {
   padding: 1rem 0.5rem;
   display: flex;

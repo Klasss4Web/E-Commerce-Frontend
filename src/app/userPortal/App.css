@@ -224,10 +224,6 @@ transform: scale(1.05);
    margin: 5px 0;
  }
 
- .rating i {
-
- }
-
 /* LOGIN */
 .login-center {
   padding: 50px 0;
@@ -337,7 +333,8 @@ transform: scale(1.05);
   background-color: #f3fbf7;
   margin-right: 20px;
   height: 400px;
-  display: flex;
+  /* display: flex; */
+  
   justify-content: center;
   align-items: center;
   /* border-radius: 10px; */
@@ -424,4 +421,53 @@ transform: scale(1.05);
 .reveal.active{
   transform: translateY(0);
   opacity: 1;
+}
+
+.cart-bag {
+  position: relative;
+}
+
+.cart-bag::before {
+  position: absolute;
+  content: attr(data-count);
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  border-radius: 15px;
+  top: -10px;
+  right: 0%;
+  text-align: center;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+.zoom {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  opacity: 0;
+  animation: zoomToBasket 1.5s ease forwards;
+}
+
+@keyframes zoomToBasket {
+  0% {
+    opacity: 0; right: 60%; top: 320px;
+  }
+   25% {
+    opacity: 0.5; right: 45%; top: 280px;
+  }
+  50% {
+    opacity: 1; right: 21%; top: 100px;
+  }
+   75% {
+    opacity: 1; right: 220px; top: 50px;
+  }
+   85% {
+    opacity: 0.5; right: 200px; top: 40px;
+  }
+  100% {
+    opacity: 0; right: 140px; top: 60px;
+  }
 }

@@ -61,7 +61,6 @@ export const adminCreateCategoriesAction =
         },
       };
 
-      
       let imgUrlsFromCloudinary;
       const formData = new FormData();
 
@@ -80,10 +79,14 @@ export const adminCreateCategoriesAction =
           const data = response.data;
           imgUrlsFromCloudinary = data.secure_url;
         });
-payload.image=imgUrlsFromCloudinary
+      payload.image = imgUrlsFromCloudinary;
       const {
         data: { data },
-      } = await axios.post(`${baseUrl}/api/categories/add-categories`, payload, config);
+      } = await axios.post(
+        `${baseUrl}/api/categories/add-categories`,
+        payload,
+        config
+      );
       console.log("merchants added", data);
       dispatch({ type: ADMIN_ADD_CATEGORIES_SUCCESS, payload: data });
     } catch (error) {
@@ -200,7 +203,11 @@ export const updateCategoryAction =
 
       const {
         data: { data },
-      } = await axios.put(`${baseUrl}/api/categories/${payload?._id}`, payload, config);
+      } = await axios.put(
+        `${baseUrl}/api/categories/${payload?._id}`,
+        payload,
+        config
+      );
       console.log("dataaaa", data);
       dispatch({ type: ADMIN_UPDATE_CATEGORY_STATUS_SUCCESS, payload: data });
       dispatch({ type: ADMIN_GET_CATEGORY_SUCCESS, payload: data });

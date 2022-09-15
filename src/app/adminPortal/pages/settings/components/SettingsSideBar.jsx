@@ -9,13 +9,16 @@ export const SettingsSideBar = () => {
   const [file, setFile] = useState();
 
   return (
-    <div style={{ display: "flex", width: "100%" }}>
+    <div
+      style={{ display: "flex", width: "100%" }}
+      className="d-block d-md-flex justify-content-between"
+    >
       <div
-        className="nav flex-column nav-pills"
+        className="nav flex-column nav-pills col-md-2 col-12"
         id="v-pills-tab"
         role="tablist"
         aria-orientation="vertical"
-        style={{ marginRight: "40px" }}
+        // style={{ marginRight: "40px" }}
       >
         <a
           className="nav-link active"
@@ -63,12 +66,12 @@ export const SettingsSideBar = () => {
         </a>
       </div>
       <div
-        className="tab-content"
+        className="tab-content flex-column nav-pills col-md-9 col-12"
         id="v-pills-tabContent"
-        style={{ width: "70%" }}
+        // style={{ width: "70%" }}
       >
         <div
-          className="tab-pane fade"
+          className="tab-pane fade mt-4 mt-md-0"
           id="v-pills-home"
           role="tabpanel"
           aria-labelledby="v-pills-home-tab"
@@ -77,7 +80,7 @@ export const SettingsSideBar = () => {
           <IntegrationSettings />
         </div>
         <div
-          className="tab-pane fade show active"
+          className="tab-pane fade show active mt-4 mt-md-0"
           id="v-pills-profile"
           role="tabpanel"
           aria-labelledby="v-pills-profile-tab"
@@ -93,20 +96,21 @@ export const SettingsSideBar = () => {
           <PasswordSettings />
         </div>
         <div
-          className="tab-pane fade"
+          className="tab-pane fade mt-4 mt-md-0"
           id="v-pills-settings"
           role="tabpanel"
           aria-labelledby="v-pills-settings-tab"
         >
-          <h4>App Settings</h4>
+          <h4 className="px-3 px-md-1">App Settings</h4>
           <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
+            className="row d-block d-md-flex justify-content-between"
+            // style={{
+            //   width: "100%",
+            //   display: "flex",
+            //   justifyContent: "space-between",
+            // }}
           >
-            <div style={{ width: "49%" }}>
+            <div className="col-12 col-md-6">
               <div className="form-group my-3" style={{ width: "100%" }}>
                 <label htmlFor="color">Company Name</label>
                 <input
@@ -153,7 +157,7 @@ export const SettingsSideBar = () => {
                 />
               </div>
             </div>
-            <div className="" style={{ width: "48%" }}>
+            <div className="col-12 col-md-6">
               {file ? (
                 <div className="card" style={{ borderRadius: "10px" }}>
                   <img

@@ -60,7 +60,7 @@ export const PersonalDetailsSettings = () => {
   return (
     <div className="mt-3">
       <Toast />
-      <form onSubmit={(e)=>handleUpdateProfile(e)}>
+      <form onSubmit={(e) => handleUpdateProfile(e)}>
         <div
           style={{
             display: "flex",
@@ -77,24 +77,19 @@ export const PersonalDetailsSettings = () => {
         >
           <img
             style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-            src={image ||
+            src={
+              image ||
               "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"
             }
             alt=""
           />
         </div>
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "space-between",
-          }}
-        >
-          <div className="form-group" style={{ width: "49%" }}>
+        <div className="my-2 row flex-column flex-md-row">
+          <div className="form-group col-12 col-md-6 mb-2 mb-md-0">
             <label htmlFor="exampleFormControlInput1">Name</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control mt-1"
               id="exampleFormControlInput1"
               placeholder="Name"
               value={name}
@@ -102,11 +97,11 @@ export const PersonalDetailsSettings = () => {
             />
           </div>
 
-          <div className="form-group" style={{ width: "49%" }}>
+          <div className="form-group col-12 col-md-6 mb-2 mb-md-0">
             <label htmlFor="email">Email</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control mt-1"
               id="email"
               placeholder="email@email.com"
               value={email}
@@ -114,19 +109,12 @@ export const PersonalDetailsSettings = () => {
             />
           </div>
         </div>
-        <div
-          className="my-3"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
-          <div className="form-group" style={{ width: "49%" }}>
+        <div className="my-2 row flex-column flex-md-row">
+          <div className="form-group col-12 col-md-6 mb-2 mb-md-0">
             <label htmlFor="phone">Phone Number</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control mt-1"
               id="phone"
               placeholder="+2347034564774"
               value={phoneNumber}
@@ -134,36 +122,41 @@ export const PersonalDetailsSettings = () => {
             />
           </div>
 
-          <div className="form-group" style={{ width: "49%" }}>
+          <div className="form-group col-12 col-md-6 mb-2 mb-md-0">
             <label htmlFor="designation">Designation</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control mt-1"
               id="designation"
               placeholder="admin"
             />
           </div>
         </div>
-        <div className="form-group my-4">
-          <label htmlFor="exampleFormControlTextarea1">Bio</label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
+        <div className="my-2 row flex-column">
+          <div className="form-group my-4">
+            <label htmlFor="exampleFormControlTextarea1">Bio</label>
+            <textarea
+              className="form-control mt-1"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
         </div>
-        <div className="form-group" style={{ display: "flex" }}>
-          {/* <input type="file" className="form-control my-3" /> */}
-          {loading ? (
-            <>
-              <button>
-                {" "}
-                <i className="fa fa-spinner fa-spin"></i>Loading
-              </button>
-            </>
-          ) : (
-            <button>Update</button>
-          )}
+
+        <div className="my-2 row flex-column flex-md-row">
+          <div className="form-group">
+            {/* <input type="file" className="form-control my-3" /> */}
+            {loading ? (
+              <>
+                <button>
+                  {" "}
+                  <i className="fa fa-spinner fa-spin"></i>Loading
+                </button>
+              </>
+            ) : (
+              <button>Update</button>
+            )}
+          </div>
         </div>
       </form>
     </div>
