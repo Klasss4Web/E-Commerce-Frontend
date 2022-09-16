@@ -28,11 +28,19 @@ const ShippingScreen = ({ history }) => {
   }
 
   return (
-    <div>
-      {/* <Header /> */}
-      <div className="container d-flex justify-content-center align-items-center">
+    <div className="row" style={{ height: "78vh" }}>
+      <div className="col-12 col-md-6 d-flex jusify-content-center align-items-center">
+        <img
+          width={"100%"}
+          height="100%"
+          style={{ borderRadius: "10px" }}
+          src="https://img.freepik.com/premium-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=2000"
+          alt=""
+        />
+      </div>
+      <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center">
         <form
-          className="login col-md-8 col-lg-4 col-11"
+          className="login col-md-12 col-lg-12 col-11"
           onSubmit={submitHandler}
         >
           <h6>DELIVERY ADDRESS</h6>
@@ -66,7 +74,7 @@ const ShippingScreen = ({ history }) => {
           />
           <button type="submit" className="mt-4">
             {/* <Link to="/payment" className="text-white"> */}
-              Continue
+            Continue
             {/* </Link> */}
           </button>
         </form>

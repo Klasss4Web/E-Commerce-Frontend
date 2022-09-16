@@ -206,6 +206,15 @@ export const PlaceOrderScreen = ({ history }) => {
               </div>
             )}
           </div>
+          <div className="col-12 col-md-6 d-none d-md-flex jusify-content-center align-items-center">
+            <img
+              width={"100%"}
+              height="100%"
+              style={{ borderRadius: "10px" }}
+              src="https://img.freepik.com/premium-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=2000"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </>

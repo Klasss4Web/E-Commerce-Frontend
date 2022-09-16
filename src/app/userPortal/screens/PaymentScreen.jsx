@@ -80,7 +80,7 @@ const PaymentScreen = ({ history }) => {
         <img
           width={"100%"}
           height="330px"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8MKNwAx38iSpdjyDI7Mk3-7g8J8lfIUF-tA&usqp=CAU"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ0QTyTsHEenFOxqEOClEHWgJafK0LZG1GFQ&usqp=CAU"
           alt=""
         />
       </div>
