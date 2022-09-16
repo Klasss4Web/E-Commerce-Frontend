@@ -8,6 +8,10 @@
   .login-register a {
     font-size: 10px;
   }
+
+  .login input {
+    padding: 10px 20px !important;
+  }
   .btn-group button {
     font-size: 13px;
   }

@@ -47,7 +47,7 @@ export const Login = ({ history, location }) => {
       <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
-        <h3 className="mb-4">Login</h3>
+        <h3 className="my-4">Login</h3>
         <form
           className="login col-md-12 col-lg-12 col-11"
           onSubmit={handleLogin}
@@ -70,7 +70,7 @@ export const Login = ({ history, location }) => {
             <Link
               to={redirect ? `/register?redirect=${redirect}` : "/register"}
             >
-              Create account
+              Dont have an account yet? Create one
             </Link>
           </p>
         </form>

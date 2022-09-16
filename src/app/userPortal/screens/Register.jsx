@@ -31,13 +31,22 @@ const Register = ({ history, location }) => {
   }, [userInfo, history, redirect]);
 
   return (
-    <div>
-      {/* <Header /> */}
-      <div className="container d-flex flex-column justify-content-center">
+    <div className="row" style={{ height: "78vh" }}>
+      <div className="col-12 col-md-6 d-flex jusify-content-center align-items-center">
+        <img
+          width={"100%"}
+          height="100%"
+          style={{ borderRadius: "10px" }}
+          src="https://img.freepik.com/premium-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=2000"
+          alt=""
+        />
+      </div>
+      <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
+        <h3 className="my-4">Register</h3>
         <form
-          className="login col-md-8 col-lg-4 col-11"
+          className="login col-md-12 col-lg-12 col-11"
           onSubmit={handleRegister}
         >
           <input
@@ -58,11 +67,14 @@ const Register = ({ history, location }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button style={{ marginBottom: "10px", marginTop: "20px"}} type="submit">Register</button>
+          <button
+            style={{ marginBottom: "10px", marginTop: "20px" }}
+            type="submit"
+          >
+            Register
+          </button>
           <p>
-            <Link
-              to={redirect ? `/login?redirect=${redirect}` : "/login"}
-            >
+            <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
               Have an account?<strong>Login</strong>
             </Link>
           </p>
