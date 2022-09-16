@@ -448,7 +448,14 @@ transform: scale(1.05);
   bottom: 50%;
   right: 50%;
   opacity: 0;
+   border-radius: 50%;
   animation: zoomToBasket 1.5s ease forwards;
+}
+
+.display {
+  position: absolute;
+  top: 47.5%;
+  border-radius: 50%;
 }
 
 @keyframes zoomToBasket {

@@ -62,23 +62,24 @@ const CartScreen = ({ match, location, history }) => {
             </div>
             {/* cart items */}
             {cartItems?.map((cartItem) => (
-              <div className="cart-item row" key={cartItem?.productId}>
+              <div className="cart-item row just" key={cartItem?.productId}>
                 <div
-                  className="remove-button d-flex justify-content-center align-items-center"
+                  className="remove-button d-flex justify-content-end justify-content-md-between align-items-center mt-4"
                   style={{ color: "red", cursor: "pointer" }}
                   onClick={() => removeFromCartHandler(cartItem?.productId)}
                 >
-                  <i className="fas fa-times"></i>
+                  <i className="fas fa-times fa-lg"></i>
                 </div>
                 <div className=" col-md-4">
                   <img
                     src={cartItem?.image}
                     alt={cartItem?.name}
                     width="100%"
+                    height={"260px"}
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
-                <div className="col-md-5 d-md-flex">
+                <div className="col-md-5 d-md-flex justify-content-between">
                   <div className="cart-text col-md-6">
                     <Link to={`/products/${cartItem?.productId}`}>
                       <h5>{cartItem?.name}</h5>
@@ -86,8 +87,8 @@ const CartScreen = ({ match, location, history }) => {
                     <h5>{cartItem?.description}</h5>
                     <h6>Quantity in store: {cartItem?.countInStock}</h6>
                   </div>
-                  <div className="cart-qty col-md-2 col-md-5 my-2">
-                    <h6>QUANTITY</h6>
+                  <div className="cart-qty col-md-2 my-2 my-md-0">
+                    <h6 className="mb-2">QUANTITY</h6>
                     <select
                       value={cartItem?.qty}
                       onChange={(e) =>
@@ -104,7 +105,7 @@ const CartScreen = ({ match, location, history }) => {
                     </select>
                   </div>
                   <div className="cart-price mt-3 mt-md-0 col-md-2 align-items-sm-end">
-                    <h6>PRICE</h6>
+                    <h6 className="mb-1">PRICE</h6>
                     <h4>${cartItem?.price}</h4>
                   </div>
                 </div>

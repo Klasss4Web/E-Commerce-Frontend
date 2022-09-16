@@ -64,7 +64,7 @@ const ShippingScreen = ({ history }) => {
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           />
-          <button type="submit">
+          <button type="submit" className="mt-4">
             {/* <Link to="/payment" className="text-white"> */}
               Continue
             {/* </Link> */}

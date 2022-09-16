@@ -68,7 +68,7 @@ export const PlaceOrderScreen = ({ history }) => {
           <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
             <div className="row">
               <div className="col-md-4 center">
-                <div className="alert-success order-box d-flex justify-content-center py-2 rounded-circle">
+                <div className="alert-success order-box d-flex justify-content-center align-items-center py-2 rounded-circle">
                   <i className="fas fa-user"></i>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export const PlaceOrderScreen = ({ history }) => {
           <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
             <div className="row">
               <div className="col-md-4 center">
-                <div className="alert-success order-box d-flex justify-content-center py-2 rounded-circle">
+                <div className="alert-success order-box d-flex justify-content-center align-items-center py-2 rounded-circle">
                   <i className="fas fa-truck-moving"></i>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export const PlaceOrderScreen = ({ history }) => {
           <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
             <div className="row">
               <div className="col-md-4 center">
-                <div className="alert-success order-box d-flex justify-content-center py-2 rounded-circle">
+                <div className="alert-success order-box d-flex justify-content-center align-items-center py-2 rounded-circle">
                   <i className="fas fa-map-marker-alt"></i>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export const PlaceOrderScreen = ({ history }) => {
         </div>
 
         <div className="row order-products justify-content-between">
-          <div className="col-lg-8">
+          <div className="col-lg-10 col-12">
             {cartItems?.length === 0 ? (
               <Message variant="alert-info mt-5">Your cart is empty</Message>
             ) : (
@@ -128,31 +128,36 @@ export const PlaceOrderScreen = ({ history }) => {
                 {cartItems?.map((item, index) => (
                   <div className="order-product row mb-3" key={index}>
                     <div
-                      className="col-md-3 col-6"
+                      className="col-md-3 col-5"
                       style={{ marginRight: "20px" }}
                     >
                       <img
                         src={item?.image}
                         alt={item?.name}
                         width="100%"
+                        height={"120px"}
                         style={{ borderRadius: "10px" }}
                       />
                     </div>
-                    <div className="col-md-4 col-6 d-flex flex-column">
-                      <Link to={`/products/${item?.productId}`}>
-                        <h6>{item?.name}</h6>
-                      </Link>
-                      <h6 className="mt-2">
-                        Status: <span style={{ color: "red" }}>Not Paid</span>
-                      </h6>
-                    </div>
-                    <div className="mt-3 mt-md-0 col-md-2 col-6 d-flex align-items-center flex-column">
-                      <h5>Quantity</h5>
-                      <h5>{item?.qty}</h5>
-                    </div>
-                    <div className="mt-3 mt-md-0 col-md-2 col-6 d-flex align-items-center flex-column">
-                      <h5>Subtotal</h5>
-                      <h5>{item?.qty * item?.price}</h5>
+                    <div className="col-6 d-md-flex justify-content-between">
+                      <div className="col-md-6 col-12 d-flex flex-column">
+                        <Link to={`/products/${item?.productId}`}>
+                          <h6>{item?.name}</h6>
+                        </Link>
+                        <h6 className="mt-2">
+                          Status: <span style={{ color: "red" }}>Not Paid</span>
+                        </h6>
+                      </div>
+                      <div className="row col-md-5 col-12 justify-content-between">
+                        <div className="mt-3 mt-md-0 col-md-2 col-6 d-flex align-items-center flex-column">
+                          <h5 className="h6">Quantity</h5>
+                          <h5 className="h6">{item?.qty}</h5>
+                        </div>
+                        <div className="mt-3 mt-md-0 col-md-2 col-6 d-flex align-items-center flex-column">
+                          <h5 className="h6">Subtotal</h5>
+                          <h5 className="h6">{item?.qty * item?.price}</h5>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}

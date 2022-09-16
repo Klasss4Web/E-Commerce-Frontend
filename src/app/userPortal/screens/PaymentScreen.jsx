@@ -76,6 +76,14 @@ const PaymentScreen = ({ history }) => {
           <button type="submit">Continue</button>
         </form>
       </div>
+      <div style={{ width: "100%", position: "fixed", bottom: 0 }}>
+        <img
+          width={"100%"}
+          height="330px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8MKNwAx38iSpdjyDI7Mk3-7g8J8lfIUF-tA&usqp=CAU"
+          alt=""
+        />
+      </div>
     </div>
   );
 }

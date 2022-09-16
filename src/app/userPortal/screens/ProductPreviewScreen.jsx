@@ -93,8 +93,8 @@ const ProductPreviewScreen = ({ history, match }) => {
                   <img src={product?.image} alt={product?.name} />
                 </div>
                 <img
-                  className={addClass ? "zoom" : ""}
-                  width="60px"
+                  className={addClass ? "zoom" : "display" }
+                  width="40px"
                   height={"40px"}
                   src={product?.image}
                   alt={product?.name}
