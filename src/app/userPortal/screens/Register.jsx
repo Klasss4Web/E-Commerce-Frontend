@@ -46,7 +46,7 @@ const Register = ({ history, location }) => {
         {loading && <Loading />}
         <h3 className="my-4">Register</h3>
         <form
-          className="login col-md-12 col-lg-12 col-11"
+          className="login col-md-12 col-lg-12 col-11 mb-4 mb-md-0"
           onSubmit={handleRegister}
         >
           <input

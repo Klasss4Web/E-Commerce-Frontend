@@ -206,7 +206,7 @@ export const PlaceOrderScreen = ({ history }) => {
               </div>
             )}
           </div>
-          <div className="col-12 col-md-6 d-none d-md-flex jusify-content-center align-items-center">
+          <div className="col-12 col-md-6 d-none d-md-flex jusify-content-center align-items-center mb-3 mb-md-0">
             <img
               width={"100%"}
               height="100%"
