@@ -32,13 +32,26 @@ export const Login = ({ history, location }) => {
   }, [userInfo, history, redirect]);
 
   return (
-    <div>
-     
+    <div className="row" style={{ height: "78vh" }}>
+      <div className="col-12 col-md-6 d-flex jusify-content-center align-items-center">
+        <img
+          width={"100%"}
+          height="100%"
+          style={{borderRadius: "10px"}}
+          src="https://img.freepik.com/premium-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=2000"
+          alt=""
+        />
+      </div>
+
       {/* <Header /> */}
-      <div className="container d-flex flex-column justify-content-center align-items-center">
+      <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
-        <form className="login col-md-8 col-lg-4 col-11" onSubmit={handleLogin}>
+        <h3 className="mb-4">Login</h3>
+        <form
+          className="login col-md-12 col-lg-12 col-11"
+          onSubmit={handleLogin}
+        >
           <input
             type={"email"}
             placeholder="email"
@@ -46,7 +59,7 @@ export const Login = ({ history, location }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-          style={{ marginBottom: "20px"}}
+            style={{ marginBottom: "20px" }}
             type={"password"}
             placeholder="password"
             value={password}
