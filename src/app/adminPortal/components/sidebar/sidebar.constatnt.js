@@ -22,6 +22,8 @@ const {
   NOTIFICATIONS,
 } = PROTECTED_PATHS;
 
+const userType = JSON.parse(localStorage.getItem("userInfo"));
+
 
 export const ADMIN_NAV_ITEMS = [
   {
@@ -35,11 +37,11 @@ export const ADMIN_NAV_ITEMS = [
     icon: TiShoppingCart,
   },
 
-  {
-    title: "Users",
-    to: CUSTOMERS,
-    icon: IoPeopleOutline,
-  },
+  // {
+  //   title: "Users",
+  //   to: CUSTOMERS,
+  //   icon: IoPeopleOutline,
+  // },
   {
     title: "Categories",
     to: CATEGORIES,
@@ -51,11 +53,11 @@ export const ADMIN_NAV_ITEMS = [
     to: ORDERS,
     icon: FiTruck,
   },
-  {
-    title: "Merchants",
-    to: MERCHANTS,
-    icon: GiGalleon,
-  },
+  // {
+  //   title: "Merchants",
+  //   to: MERCHANTS,
+  //   icon: GiGalleon,
+  // },
   {
     title: "Transactions",
     to: TRANSACTIONS,
@@ -72,9 +74,28 @@ export const ADMIN_NAV_ITEMS = [
     to: NOTIFICATIONS,
     icon: BsBell,
   },
-  {
-    title: "Settings",
-    to: SETTINGS,
-    icon: FiSettings,
-  },
+  ...(userType?.isAdmin
+    ? [
+        {
+          title: "Users",
+          to: CUSTOMERS,
+          icon: IoPeopleOutline,
+        },
+        {
+          title: "Merchants",
+          to: MERCHANTS,
+          icon: GiGalleon,
+        },
+        {
+          title: "Settings",
+          to: SETTINGS,
+          icon: FiSettings,
+        },
+      ]
+    : []),
+  // {
+  //   title: "Settings",
+  //   to: SETTINGS,
+  //   icon: FiSettings,
+  // },
 ];
