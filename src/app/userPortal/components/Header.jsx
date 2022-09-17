@@ -6,12 +6,14 @@ import { logout } from "../../../redux/actions/userActions";
 import logo from "../../adminPortal/assets/logo.png";
 
 const Header = () => {
+  const companyProfile = useSelector((state) => state.companyDetails);
+  const { companyDetails } = companyProfile;
 
- 
-  
-  const [keyword, setKeyword] = useState("")
+  console.log(companyDetails, "details");
+
+  const [keyword, setKeyword] = useState("");
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -23,13 +25,13 @@ const Header = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if(keyword.trim()) {
-      history.push(`/search/${keyword}`)
+    e.preventDefault();
+    if (keyword.trim()) {
+      history.push(`/search/${keyword}`);
     } else {
-      history.push("/")
+      history.push("/");
     }
-  }
+  };
 
   return (
     <div>
@@ -37,12 +39,13 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex align-items-center display-none">
-              <p>+234 703 560 7059</p>
-              <p>info@ecommerce.ng</p>
+              <p>{companyDetails?.companyPhone}</p>
+              <p>{companyDetails?.companyName}</p>
             </div>
             <div className="col-12 col-lg-6 d-flex justify-content-between align-items-center">
               <p className="d-block d-md-none" style={{ color: "#fff" }}>
-                info@ecommerce.ng
+                {companyDetails?.companyName}
+                <p>{companyDetails?.companyPhone}</p>
               </p>
               <div className="d-none d-md-block">
                 <Link to="">
@@ -51,7 +54,7 @@ const Header = () => {
                 <Link to="">
                   <i className="fab fa-instagram"></i>
                 </Link>
-                <Link to="">
+                <Link to="https://linkedin.com/in/emmanuel-ochade">
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
                 <Link to="">
@@ -297,6 +300,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
+};;
 
 export default Header;

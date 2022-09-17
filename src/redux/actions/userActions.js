@@ -56,7 +56,7 @@ export const login = (email, password) => async (dispatch) => {
     //   dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
     // }
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
-    window.location.href = "/";
+    window.location.reload();
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
     dispatch({

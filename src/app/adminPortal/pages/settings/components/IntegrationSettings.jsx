@@ -7,11 +7,7 @@ export const IntegrationSettings = () => {
     <div>
      
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut diam nonumy eirmod tempor invidunt ut diam
-        nonumy eirmod tempor invidunt ut Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut diam nonumy
-        eirmod tempor invidunt ut diam nonumy eirmod tempor invidunt ut
+        Work in progress!!! Should be ready soon enough
       </p>
       <div
         style={{

@@ -4,9 +4,20 @@ import { PersonalDetailsSettings } from "./PersonalDetailsSettings";
 import { BsCardImage } from "react-icons/bs";
 import { IntegrationSettings } from "./IntegrationSettings";
 
-export const SettingsSideBar = () => {
+export const SettingsSideBar = ({ companyDetails }) => {
   const [, setImage] = useState("");
   const [file, setFile] = useState();
+  const [formValues, setFormValues] = useState({
+    companyName: companyDetails?.companyName,
+    companyEmail: companyDetails?.companyEmail,
+    companyPhone: companyDetails?.companyPhone,
+    primaryColor: companyDetails?.primaryColor,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
 
   return (
     <div
@@ -119,6 +130,8 @@ export const SettingsSideBar = () => {
                   className="form-control mb-3"
                   id="name"
                   placeholder="name"
+                  value={formValues?.companyName}
+                  onChange={handleChange}
                 />
                 <label htmlFor="email">Support Email</label>
                 <input
@@ -127,6 +140,8 @@ export const SettingsSideBar = () => {
                   className="form-control mb-3"
                   id="email"
                   placeholder="support@ecommerce.com"
+                  value={formValues?.companyEmail}
+                  onChange={handleChange}
                 />
                 <label htmlFor="phone">Support Line</label>
                 <input
@@ -135,6 +150,8 @@ export const SettingsSideBar = () => {
                   className="form-control mb-3"
                   id="phone"
                   placeholder="+23413243536"
+                  value={companyDetails?.companyPhone}
+                  onChange={handleChange}
                 />
               </div>
               <div className="form-group my-3" style={{ width: "100%" }}>
@@ -145,6 +162,8 @@ export const SettingsSideBar = () => {
                   className="form-control mb-3"
                   id="color"
                   placeholder="Color"
+                  value=""
+                  onChange={handleChange}
                 />
                 <label htmlFor="logo">Logo</label>
                 <input

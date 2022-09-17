@@ -13,7 +13,10 @@ import {
   merchantListProducts,
 } from "./redux/actions/productActions";
 import { adminOrdersListAction } from "./redux/actions/orderActions";
-
+import {
+  getCompanyDetailsAction,
+  getCompanyProfileAction,
+} from "./redux/actions/companyProfileAction";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,15 +27,17 @@ function App() {
   const parsedData = JSON.parse(userData);
 
   // const decoded = jwtDecode(userData?.token);
-  const isAdmin = userInfo && userInfo?.isAdmin
-  const merchant = userInfo && userInfo?.userType === "merchant"
+  const isAdmin = userInfo && userInfo?.isAdmin;
+  const merchant = userInfo && userInfo?.userType === "merchant";
   const token = parsedData?.token;
 
   useEffect(() => {
+    dispatch(getCompanyDetailsAction());
     if (isAdmin) {
       dispatch(adminListProducts());
       dispatch(adminOrdersListAction());
       dispatch(merchantListProducts());
+      dispatch(getCompanyProfileAction());
       // dispatch(adminListNotifications());
     }
 

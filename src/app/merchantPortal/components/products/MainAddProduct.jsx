@@ -212,6 +212,10 @@ export const MainAddProduct = () => {
                 style={{ borderRadius: "10px" }}
                 alt=""
               />
+              <i style={{ color: "red", textDecoration: "italic" }}>
+                Product added would require admin approval before it can be
+                displayed for all to see. Please ensure to enter enough details
+              </i>
             </div>
           </div>
         </form>

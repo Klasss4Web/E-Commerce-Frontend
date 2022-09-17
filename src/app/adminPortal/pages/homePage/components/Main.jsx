@@ -12,6 +12,8 @@ export const Main = () => {
   const { loading, orders } = orderList
   const productList = useSelector(state=>state.adminProductList)
   const { products } = productList
+
+
   return (
     <div>
       <section className="content-main">

@@ -11,7 +11,7 @@ import ShippingScreen from "../userPortal/screens/ShippingScreen";
 import PaymentScreen from "../userPortal/screens/PaymentScreen";
 import { PlaceOrderScreen } from "../userPortal/screens/PlaceOrderScreen";
 import { OrderScreen } from "../userPortal/screens/OrderScreen";
-import { NotFound } from "../userPortal/screens/NotFound";
+// import { NotFound } from "../userPortal/screens/NotFound";
 import Header from "../userPortal/components/Header"
 import { ProtectedRoutes } from "../../ProtectedRoutes";
 
@@ -38,7 +38,7 @@ function UsersPortalRoutes() {
           <ProtectedRoutes path="/payment" component={PaymentScreen} />
           <ProtectedRoutes path="/placeorder" component={PlaceOrderScreen} />
           <ProtectedRoutes path="/order/:id" component={OrderScreen} />
-          <Route path="*" component={NotFound} />
+          <Route path="/*" component={HomeScreen} />
         </Switch>
       </div>
     </Router>

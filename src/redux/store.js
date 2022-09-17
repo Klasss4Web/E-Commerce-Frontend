@@ -48,6 +48,7 @@ import {
 import { adminAddCategoryReducer, adminDeleteCategoryReducer, adminUpdateCategoryReducer, categoryListReducer } from "./reducers/categoriesReducers";
 import { counterReducer } from "./reducers/counterReducer";
 import { adminUpdateNotificationReducer, merchantNotificationList, notificationListReducer } from "./reducers/notificationsReducers";
+import { companyDetailsReducer, companyProfileReducer, companyUpdateProfileReducer } from "./reducers/companyProfileReducers";
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -89,6 +90,9 @@ const reducer = combineReducers({
   merchantNotifications: merchantNotificationList,
   adminNotificationList: notificationListReducer,
   adminUpdateNotification: adminUpdateNotificationReducer,
+  companyProfile: companyProfileReducer,
+  companyDetails: companyDetailsReducer,
+  updateCompnayProfile: companyUpdateProfileReducer,
   counter: counterReducer,
 });
 

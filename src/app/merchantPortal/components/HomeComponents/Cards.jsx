@@ -14,7 +14,7 @@ export const Cards = ({ orders, products }) => {
     <div className="row" style={{ color: "#fff" }}>
       <div className="col-lg-4">
         <div className="card card-body mb-4 shadow-md card-animate p-0">
-          <img class="card-img card-img_bg" src={bgOne} alt="background" />
+          <img className="card-img card-img_bg" src={bgOne} alt="background" />
           <article className="iconText card-img-overlay">
             <span className="icon icon-sm rounded-circle alert-primary">
               <i className="text-primary fas fa-usd-circle"></i>
@@ -46,7 +46,7 @@ export const Cards = ({ orders, products }) => {
       </div>
       <div className="col-lg-4">
         <div className="card card-body mb-4 shadow-md card-animate p-0">
-          <img class="card-img card-img_bg" src={bgThree} alt="background" />
+          <img className="card-img card-img_bg" src={bgThree} alt="background" />
           <article className="iconText  card-img-overlay">
             <span className="icon icon-sm rounded-circle alert-primary">
               <i className="text-primary fas fa-shopping-basket"></i>

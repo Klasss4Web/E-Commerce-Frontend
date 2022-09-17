@@ -19,6 +19,9 @@ export const Header = ({ toggle, sideBarActive, showSidebar }) => {
     (notif) => notif?.status === "Pending"
   );
 
+    const companyProfile = useSelector((state) => state.companyDetails);
+    const { companyDetails } = companyProfile;
+
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -61,6 +64,7 @@ export const Header = ({ toggle, sideBarActive, showSidebar }) => {
               <i className="far fa-search"></i>
             </button> */}
           </div>
+
           <datalist id="search_terms">
             <option value={"Products"} />
             <option value={"New Orders"} />
@@ -69,7 +73,20 @@ export const Header = ({ toggle, sideBarActive, showSidebar }) => {
           </datalist>
         </form>
       </div>
-      <p>{greet()}</p>
+      <p className="d-none d-md-block" style={{ color: "#0E6B60" }}>
+        {companyDetails?.companyEmail}
+      </p>
+      <div className="d-flex flex-column justify-content-center align-items-center">
+        <h6 className="fw-bold" style={{ color: "#0E6B60" }}>
+          {companyDetails?.companyName}
+        </h6>
+        <p className="d-md-none" style={{ color: "#0E6B60" }}>
+          {greet()}
+        </p>
+      </div>
+      <p className="d-md-block d-none" style={{ color: "#0E6B60" }}>
+        {greet()}
+      </p>
       <div className="col-nav">
         {/* <button
           className="btn btn-icon btn-mobile me-auto"

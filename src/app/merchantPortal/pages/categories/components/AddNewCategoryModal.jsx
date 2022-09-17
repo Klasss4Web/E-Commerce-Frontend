@@ -25,7 +25,7 @@ export const AddNewCategoryModal = ({ loading, error }) => {
     <div>
       <button
         type="button"
-        class="btn btn-primary"
+        className="btn btn-primary px-1 px-md-2"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdropModal"
       >
@@ -54,6 +54,19 @@ export const AddNewCategoryModal = ({ loading, error }) => {
                 aria-label="Close"
               ></button>
             </div>
+            <i
+              style={{
+                color: "red",
+                textDecoration: "italic",
+                fontSize: "12px",
+                paddingLeft: "20px",
+                paddingRight: "20px",
+                paddingTop: "20px",
+              }}
+            >
+              Categories added would require admin approval before it can be
+              displayed for all to see. Please ensure to enter enough details
+            </i>
             <div class="modal-body" style={{ width: "100%" }}>
               <label htmlFor="name">Name</label>
 
@@ -83,7 +96,9 @@ export const AddNewCategoryModal = ({ loading, error }) => {
                 }}
               >
                 <input
-                  placeholder={image?.name || "Enter Image Url or click the plus sign"}
+                  placeholder={
+                    image?.name || "Enter Image Url or click the plus sign"
+                  }
                   style={{
                     width: "80%",
                     height: "40px",

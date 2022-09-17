@@ -16,11 +16,14 @@ export const ShopSection = ({ keyword, pageNumber }) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
+  const companyProfile = useSelector((state) => state.companyProfile);
+  const { companyDetails } = companyProfile;
+
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
-
+console.log('companyDetails', companyDetails)
   return (
     <div>
       <div className="container">
