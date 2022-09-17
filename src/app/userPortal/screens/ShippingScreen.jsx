@@ -38,7 +38,7 @@ const ShippingScreen = ({ history }) => {
           alt=""
         />
       </div>
-      <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center">
+      <div className=" col-md-6 container d-flex flex-column justify-content-center align-items-center py-4 py-md-0">
         <form
           className="login col-md-12 col-lg-12 col-11"
           onSubmit={submitHandler}

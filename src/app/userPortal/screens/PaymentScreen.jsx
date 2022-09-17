@@ -26,7 +26,7 @@ const PaymentScreen = ({ history }) => {
   return (
     <div>
       {/* <Header /> */}
-      <div className="container d-flex justify-content-center align-items-center login-">
+      <div className="container d-flex justify-content-center align-items-center my-3 login-">
         <form
           className="login2 col-md-8 col-lg col-11"
           onSubmit={submitHandler}
@@ -79,7 +79,7 @@ const PaymentScreen = ({ history }) => {
       <div style={{ width: "100%", position: "fixed", bottom: 0 }}>
         <img
           width={"100%"}
-          height="330px"
+          height="250px"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ0QTyTsHEenFOxqEOClEHWgJafK0LZG1GFQ&usqp=CAU"
           alt=""
         />
