@@ -199,7 +199,7 @@ export const MainAddProduct = () => {
                       </button>
                     </>
                   ) : (
-                    <button>Add to store</button>
+                    <button style={{ cursor: "pointer" }}>Add to store</button>
                   )}
                 </div>
               </div>

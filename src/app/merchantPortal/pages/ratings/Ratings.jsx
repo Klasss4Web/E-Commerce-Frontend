@@ -17,7 +17,7 @@ export const RatingsPage = () => {
     dispatch(merchantGetReviewsActions());
   }, [dispatch]);
   return (
-    <div style={{ padding: "50px" }}>
+    <div className="p-md-5 p-4">
       <main className="main-wrap">
         <div className="content-header">
           <h2 className="content-title">Reviews</h2>
@@ -25,11 +25,12 @@ export const RatingsPage = () => {
         {error && <Message variant={"alert-danger"}>{error}</Message>}
         {loading && <Loading />}
         {/* <MainRatings /> */}
-        {reviews?.data?.length > 0 ? (
+        {reviews?.data?.length > 0 &&
           reviews?.data?.map((review) => (
             <RatingCard reviews={review} key={review?._id} />
-          ))
-        ) : (
+          ))}
+
+        {reviews?.data?.length < 0 && (
           <div className="d-flex justify-content-center align-items-center flex-column">
             <ImFileEmpty size="30%" />
             <h4 className="mt-3">No Rating Available At This Time</h4>

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../../../redux/actions/cartActions';
 
 const PaymentScreen = ({ history }) => {
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
 
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;

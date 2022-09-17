@@ -11,19 +11,38 @@ export const RatingCard = ({ reviews }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
-    <div style={{ width: "99%", marginBottom: "20px" }}>
+    <div
+      style={{
+        width: "99%",
+        // height: "300px",
+        marginBottom: "20px",
+        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+        borderRadius: "10px",
+        padding: "10px"
+      }}
+    >
       <Slider {...settings}>
         <div className="slide">
-          <div style={{ width: "30%" }}>
+          <div
+            className="slide-image"
+            style={
+              {
+                // width: "30%",
+                // boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+              }
+            }
+          >
             <img
               width={"100%"}
+              height="200px"
               src={reviews?.image}
               alt=""
               style={{ borderRadius: "10px" }}
             />
           </div>
-          <div style={{ width: "68%" }}>
+          <div className="slide-text">
             <Rating text={""} value={reviews?.rating} />
             <h6>Total Reviews: {reviews?.numReviews}</h6>
             <h5>Product: {reviews?.name}</h5>
@@ -39,15 +58,16 @@ export const RatingCard = ({ reviews }) => {
         </div>
         {reviews?.reviews?.map((individualReview) => (
           <div className="slide" key={individualReview?._id}>
-            <div style={{ width: "30%" }}>
+            <div className="slide-image">
               <img
                 width={"100%"}
+                height="200px"
                 src={reviews?.image}
                 alt=""
                 style={{ borderRadius: "10px" }}
               />
             </div>
-            <div style={{ width: "68%" }}>
+            <div className="slide-text">
               <h5>{individualReview?.name}</h5>
               <Rating
                 text={individualReview?.comment}

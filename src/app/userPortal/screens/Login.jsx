@@ -9,7 +9,7 @@ import { login } from "../../../redux/actions/userActions";
 // import Toast from "../components/loadingError/Toast";
 
 export const Login = ({ history, location }) => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

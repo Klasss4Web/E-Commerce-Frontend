@@ -152,7 +152,7 @@ const Header = () => {
                   >
                     {/* <span className="badge">{cartItems?.length}</span> */}
                     <i
-                      class="fa fa-shopping-cart shopping-cart-bag"
+                      className="fa fa-shopping-cart shopping-cart-bag"
                       aria-hidden="true"
                       style={{ fontSize: "28px", color: "#264653" }}
                     ></i>
@@ -276,7 +276,7 @@ const Header = () => {
                 >
                   {/* <span className="badge">{cartItems?.length}</span> */}
                   <i
-                    class="fa fa-shopping-cart"
+                    className="fa fa-shopping-cart"
                     aria-hidden="true"
                     style={{ fontSize: "40px", color: "#264653" }}
                   ></i>

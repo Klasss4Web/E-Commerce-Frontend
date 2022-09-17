@@ -8,7 +8,7 @@ import { ORDER_CREATE_RESET } from "../../../redux/constants/orderConstants";
 // import Header from "./../components/Header";
 
 export const PlaceOrderScreen = ({ history }) => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
