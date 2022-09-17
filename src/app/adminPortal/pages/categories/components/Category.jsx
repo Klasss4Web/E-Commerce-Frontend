@@ -16,43 +16,27 @@ export const Category = ({ category, setRefresh }) => {
 
   return (
     <div
-      className="card category-card"
- 
+      className="card p-3 category-card"
     >
       <img
         className="card-img-top"
         src={category?.image}
         alt="cap"
         height={"150px"}
-        style={{ borderRadius: "10px" }}
+        // style={{ borderRadius: "10px" }}
       />
       <div
-        className="card-body"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
+        className="card-body d-flex justify-content-between">
         <p className="card-text">{category?.name}</p>
         <div
-          className=""
-          style={{
-            width: "30%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        className="call-to-action-wrapper">
           <div>
             <EditCategoryModal category={category} setRefresh={setRefresh} />
           </div>
 
           <div
             onClick={() => handleDeleteCategory(category?._id)}
-            className="px-2"
-            style={{
-              border: "1px solid red",
-              borderRadius: "5px",
-              color: "red",
-              cursor: "pointer",
-            }}
-          >
+            className="px-2 category-delete">
             <i className="fas fa-trash-alt"></i>
           </div>
         </div>

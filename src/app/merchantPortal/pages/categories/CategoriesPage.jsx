@@ -32,7 +32,7 @@ export const CategoriesPage = () => {
 
 
   return (
-    <div style={{ padding: "50px" }}>
+    <div className="p-4">
       <Toast />
       <main className="main-wrap">
         <div className="content-header">

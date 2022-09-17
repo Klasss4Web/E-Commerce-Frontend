@@ -3,23 +3,21 @@ import { useDispatch } from "react-redux";
 import { adminCreateCategoriesAction } from "../../../../../redux/actions/categoriesActions";
 
 export const AddNewCategoryModal = ({ loading, error }) => {
-
   const [file, setFile] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [imageUrl, setimageUrl] = useState("")
-  const dispatch = useDispatch()
+  const [imageUrl, setimageUrl] = useState("");
+  const dispatch = useDispatch();
 
   const handleCreate = () => {
-
     const payload = {
       name,
       description,
-      image: image || imageUrl
-    }
+      image: image || imageUrl,
+    };
     dispatch(adminCreateCategoriesAction(payload));
-  }
+  };
 
   return (
     <div>
@@ -54,54 +52,34 @@ export const AddNewCategoryModal = ({ loading, error }) => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body" style={{ width: "100%" }}>
+            <div className="modal-body add-category-body">
               <label htmlFor="name">Name</label>
 
               <input
+                className="add-category-input"
                 placeholder="Enter category name"
-                style={{
-                  width: "100%",
-                  height: "40px",
-                  borderRadius: "5px",
-                  border: "1px solid #d4d4d4",
-                  marginTop: "10px",
-                  marginBottom: "15px",
-                  paddingLeft: "10px",
-                  paddingRight: "20px",
-                }}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
 
               <label htmlFor="image">Image</label>
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
+              <div className="d-flex align-items-center justify-content-between">
                 <input
-                  placeholder={image?.name || "Enter Image Url or click the plus sign"}
-                  style={{
-                    width: "80%",
-                    height: "40px",
-                    borderRadius: "5px",
-                    border: "1px solid #d4d4d4",
-                    marginTop: "10px",
-                    marginBottom: "15px",
-                    paddingLeft: "10px",
-                    paddingRight: "20px",
-                  }}
+                  className="add-category-input add-category-input_img"
+                  placeholder={
+                    image?.name || "Enter Image Url or click the plus sign"
+                  }
+                 
                   value={imageUrl}
                   onChange={(e) => setimageUrl(e.target.value)}
                 />
-                <div style={{ position: "relative" }}>
+                <div className="add-category_img-display">
                   <i className="fa fa-plus"></i>
                   <img
                     width={"40px"}
                     height="40px"
+                    className="add-category-display-mage"
                     style={{ borderRadius: "50%" }}
                     src={
                       file ||
@@ -170,15 +148,6 @@ export const AddNewCategoryModal = ({ loading, error }) => {
                   Add Category
                 </button>
               )}
-              {/* <button
-                type="button"
-                className="btn btn-primary mb-4"
-                data-bs-dismiss="modal"
-                disabled={!name || !image}
-                onClick={handleCreate}
-              >
-                Add Category
-              </button> */}
             </div>
           </div>
         </div>
