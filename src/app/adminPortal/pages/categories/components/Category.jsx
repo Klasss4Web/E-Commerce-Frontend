@@ -4,20 +4,16 @@ import { adminDeleteCategory } from "../../../../../redux/actions/categoriesActi
 import { EditCategoryModal } from "./EditCategoryModal";
 
 export const Category = ({ category, setRefresh }) => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleDeleteCategory = () => {
-     if (window.confirm("Are you sure??")) {
-       dispatch(adminDeleteCategory(category?._id, setRefresh));
-     }
-    
-  }
+    if (window.confirm("Are you sure??")) {
+      dispatch(adminDeleteCategory(category?._id, setRefresh));
+    }
+  };
 
   return (
-    <div
-      className="card p-3 category-card"
-    >
+    <div className="card p-3 category-card">
       <img
         className="card-img-top"
         src={category?.image}
@@ -25,18 +21,17 @@ export const Category = ({ category, setRefresh }) => {
         height={"150px"}
         // style={{ borderRadius: "10px" }}
       />
-      <div
-        className="card-body d-flex justify-content-between">
+      <div className="card-body d-flex justify-content-between">
         <p className="card-text">{category?.name}</p>
-        <div
-        className="call-to-action-wrapper">
+        <div className="call-to-action-wrapper">
           <div>
             <EditCategoryModal category={category} setRefresh={setRefresh} />
           </div>
 
           <div
             onClick={() => handleDeleteCategory(category?._id)}
-            className="px-2 category-delete">
+            className="px-2 category-delete"
+          >
             <i className="fas fa-trash-alt"></i>
           </div>
         </div>

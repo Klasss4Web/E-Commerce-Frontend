@@ -4,10 +4,16 @@ import { ToastObjects } from "../../app/adminPortal/components/loadingError/toas
 import { baseUrl } from "../../app/services/requestUrl";
 import { ORDER_LIST_RESET } from "../constants/orderConstants";
 import {
+  ADMIN_DELETE_USER_STATUS_FAILURE,
+  ADMIN_DELETE_USER_STATUS_REQUEST,
+  ADMIN_DELETE_USER_STATUS_SUCCESS,
   ADMIN_REGISTER_USER_FAILURE,
   ADMIN_REGISTER_USER_REQUEST,
   ADMIN_REGISTER_USER_SUCCESS,
   ADMIN_UPDATE_PROFILE_SUCCESS,
+  ADMIN_UPDATE_USER_STATUS_FAILURE,
+  ADMIN_UPDATE_USER_STATUS_REQUEST,
+  ADMIN_UPDATE_USER_STATUS_SUCCESS,
   GET_USERS_FAILURE,
   GET_USERS_REQUEST,
   GET_USERS_RESET,
@@ -59,13 +65,15 @@ export const login = (email, password) => async (dispatch) => {
     window.location.reload();
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
+    const message =
+      error?.response && error?.response?.data?.message
+        ? error?.response?.data?.message
+        : error?.message;
     dispatch({
       type: USER_LOGIN_FAILURE,
-      payload:
-        error?.response && error?.response?.data?.message
-          ? error?.response?.data?.message
-          : error?.message,
+      payload: message
     });
+    toast.error(message, ToastObjects);
   }
 };
 
@@ -311,6 +319,85 @@ export const updateAdminProfile = (user) => async (dispatch, getState) => {
     });
   }
 };
+
+// UPDATE ADMIN PROFILE ACTIONS
+export const updateUserStatus = (id, status, setRefresh) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: ADMIN_UPDATE_USER_STATUS_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo?.token}`,
+      },
+    };
+
+    const { data } = await axios.put(`${baseUrl}/api/users/${id}`, {status}, config);
+    toast.success("User status successfully updated", ToastObjects);
+
+    dispatch({ type: ADMIN_UPDATE_USER_STATUS_SUCCESS, payload: data });
+    setRefresh(prev=>!prev);
+  } catch (error) {
+    const message =
+      error?.response && error?.response?.data?.message
+        ? error?.response?.data?.message
+        : error?.message;
+    if (message === "Not authorized, no token found") {
+      dispatch(logout());
+    }
+    dispatch({
+      type: ADMIN_UPDATE_USER_STATUS_FAILURE,
+      payload: message,
+    });
+  }
+};
+
+// ADMIN DELETE PRODUCT
+export const adminDeleteUserAction = (userId, setRefresh) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: ADMIN_DELETE_USER_STATUS_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo?.token}`,
+      },
+    };
+
+    await axios.delete(`${baseUrl}/api/users/${userId}`, config);
+
+    dispatch({ type: ADMIN_DELETE_USER_STATUS_SUCCESS });
+    toast.success("User Successfully Deleted", ToastObjects)
+    setRefresh(prev=>!prev)
+  } catch (error) {
+    const message =
+      error?.response && error?.response?.data?.message
+        ? error?.response?.data?.message
+        : error?.message;
+    if (message === "Not authorized, no token found") {
+      dispatch(logout());
+    }
+    dispatch({
+      type: ADMIN_DELETE_USER_STATUS_FAILURE,
+      payload: message,
+    });
+    toast.error(message, ToastObjects)
+  }
+};
+
+
 
 // GET ALL USERS ACTIONS
 export const getUsers = () => async (dispatch, getState) => {

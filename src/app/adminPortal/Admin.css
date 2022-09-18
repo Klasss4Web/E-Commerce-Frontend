@@ -424,12 +424,20 @@ body .aside-mini .menu-aside .menu .has-submenu .menu-link:after {
   width: 49%;
 }
 
+.active-status {
+  color: green
+}
+
+.inactive-status {
+  color: red
+}
+
 .card_header {
   border-radius: 50% !important;
   width: 200px;
   /* height: 200px; */
   position: absolute;
-  top: -60%;
+  top: -50%;
   left: 3%;
 }
 
@@ -460,6 +468,13 @@ body .aside-mini .menu-aside .menu .has-submenu .menu-link:after {
   border: 1px solid red;
   border-radius: 5px;
   color: red;
+  cursor: pointer;
+}
+
+.category-update {
+  border: 1px solid green;
+  border-radius: 5px;
+  color: green;
   cursor: pointer;
 }
 

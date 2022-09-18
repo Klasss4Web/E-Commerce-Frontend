@@ -1,4 +1,4 @@
-import { ADMIN_REGISTER_USER_FAILURE, ADMIN_REGISTER_USER_REQUEST, ADMIN_REGISTER_USER_SUCCESS, ADMIN_UPDATE_PROFILE_FAILURE, ADMIN_UPDATE_PROFILE_REQUEST, ADMIN_UPDATE_PROFILE_SUCCESS, GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_RESET, GET_USERS_SUCCESS, USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_PROFILE_FAILURE, USER_PROFILE_REQUEST, USER_PROFILE_SUCCESS, USER_PROFILE_UPDATE, USER_REGISTER_FAILURE, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_UPDATE_PROFILE_FAILURE, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS } from "../constants/userConstants";
+import { ADMIN_DELETE_USER_STATUS_FAILURE, ADMIN_DELETE_USER_STATUS_REQUEST, ADMIN_DELETE_USER_STATUS_SUCCESS, ADMIN_REGISTER_USER_FAILURE, ADMIN_REGISTER_USER_REQUEST, ADMIN_REGISTER_USER_SUCCESS, ADMIN_UPDATE_PROFILE_FAILURE, ADMIN_UPDATE_PROFILE_REQUEST, ADMIN_UPDATE_PROFILE_SUCCESS, ADMIN_UPDATE_USER_STATUS_FAILURE, ADMIN_UPDATE_USER_STATUS_REQUEST, ADMIN_UPDATE_USER_STATUS_SUCCESS, GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_RESET, GET_USERS_SUCCESS, USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_PROFILE_FAILURE, USER_PROFILE_REQUEST, USER_PROFILE_SUCCESS, USER_PROFILE_UPDATE, USER_REGISTER_FAILURE, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_UPDATE_PROFILE_FAILURE, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS } from "../constants/userConstants";
 
 // LOGIN
 export const userLoginReducer = (
@@ -146,6 +146,57 @@ export const adminUpdateProfileReducer = (state = {}, action) => {
       return state;
   }
 };
+
+//UPDATE USER STATUS
+export const adminUpdateUserStatus = (state = {}, action) => {
+  switch (action.type) {
+    case ADMIN_UPDATE_USER_STATUS_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case ADMIN_UPDATE_USER_STATUS_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+
+    case ADMIN_UPDATE_USER_STATUS_FAILURE:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+
+//ADMIN DELETE PRODUCTS
+export const adminDeleteUser = (state = {}, action) => {
+  switch (action.type) {
+    case ADMIN_DELETE_USER_STATUS_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case ADMIN_DELETE_USER_STATUS_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+
+    case ADMIN_DELETE_USER_STATUS_FAILURE:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+
 
 //UPDATE ADD NEW USER
 export const adminCreateUserReducer = (state = {user: []}, action) => {

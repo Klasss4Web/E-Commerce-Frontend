@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
-import Message from '../../../../userPortal/components/loadingError/Error';
-import Loading from '../../../../userPortal/components/loadingError/Loading';
-import Toast from '../../../components/loadingError/Toast';
-import { AddNewUserModal } from './AddNewUserModal';
-
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { adminDeleteUserAction } from "../../../../../redux/actions/userActions";
+import Message from "../../../../userPortal/components/loadingError/Error";
+import Loading from "../../../../userPortal/components/loadingError/Loading";
+import Toast from "../../../components/loadingError/Toast";
+import { AddNewUserModal } from "./AddNewUserModal";
+import { UpdateUserStatusModal } from "./UpdateUserStatusModal";
 
 export const UserComponent = ({
   users,
@@ -13,6 +15,13 @@ export const UserComponent = ({
   setRefresh,
   handleFilter,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleDeleteUser = (userId) => {
+    if (window.confirm("Are you sure??")) {
+      dispatch(adminDeleteUserAction(userId, setRefresh));
+    }
+  };
 
   return (
     <section className="content-main">
@@ -72,6 +81,7 @@ export const UserComponent = ({
                   // className="col mb-4"
                   style={{
                     marginBottom: "100px",
+                    // marginTop: "20px"
                   }}
                 >
                   <div
@@ -86,21 +96,43 @@ export const UserComponent = ({
                           "https://media.istockphoto.com/photos/girl-with-headphones-and-neon-lighting-stylized-3d-character-picture-id1330874201?b=1&k=20&m=1330874201&s=170667a&w=0&h=GL7X6kheNB4ip-Mw8B0aI3KbUfWCzRthJqCNv5qq2jg="
                         }
                         alt={`${user?.name}`}
-                        style={{ height: "170px", width: "100%" }}
+                        style={{ height: "160px", width: "100%" }}
                       />
                     </div>
                     <div className="card-body mt-2">
-                      <h5 className="card-title mt-5 text-truncate d-inline-block">
+                      <h5 className="card-title mt-5 text-truncate d-inline-block m-0">
                         {user?.name}
                       </h5>
                       <div className="card-text text-muted">
                         {user?.isAdmin ? (
-                          <p className="m-0">Admin</p>
+                          <div className="d-flex justify-content-between m-0">
+                            <p className="m-0">Admin</p>
+                            <p
+                              className={
+                                user?.status.toLowerCase() === "active"
+                                  ? "active-status m-0"
+                                  : "inactive-status m-0"
+                              }
+                            >
+                              {user?.status}
+                            </p>
+                          </div>
                         ) : (
-                          <p className="m-0">Customer</p>
+                          <div className="d-flex justify-content-between m-0">
+                            <p className="m-0">Customer</p>
+                            <p
+                              className={
+                                user?.status.toLowerCase() === "active"
+                                  ? "active-status m-0"
+                                  : "inactive-status m-0"
+                              }
+                            >
+                              {user?.status}
+                            </p>
+                          </div>
                         )}
 
-                        <p>
+                        <p className="m-0">
                           <a
                             href={`mailto:${user?.email}`}
                             className="text-truncate d-inline-block"
@@ -109,6 +141,21 @@ export const UserComponent = ({
                             {user?.email}
                           </a>
                         </p>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <div className="px-2 category-update">
+                          <UpdateUserStatusModal
+                            data={user}
+                            setRefresh={setRefresh}
+                          />
+                        </div>
+
+                        <div
+                          onClick={() => handleDeleteUser(user?._id)}
+                          className="px-2 category-delete"
+                        >
+                          <i className="fas fa-trash-alt"></i>
+                        </div>
                       </div>
                     </div>
                   </div>

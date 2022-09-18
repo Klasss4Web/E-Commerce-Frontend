@@ -69,7 +69,7 @@ export const AddNewUserModal = ({ setRefresh }) => {
                   borderRadius: "5px",
                   border: "1px solid #d4d4d4",
                   marginTop: "10px",
-                  marginBottom: "15px",
+                  marginBottom: "10px",
                   paddingLeft: "10px",
                   paddingRight: "20px",
                 }}
@@ -87,7 +87,7 @@ export const AddNewUserModal = ({ setRefresh }) => {
                   borderRadius: "5px",
                   border: "1px solid #d4d4d4",
                   marginTop: "10px",
-                  marginBottom: "15px",
+                  marginBottom: "10px",
                   paddingLeft: "10px",
                   paddingRight: "20px",
                 }}
@@ -105,7 +105,7 @@ export const AddNewUserModal = ({ setRefresh }) => {
                   borderRadius: "5px",
                   border: "1px solid #d4d4d4",
                   marginTop: "10px",
-                  marginBottom: "15px",
+                  marginBottom: "10px",
                   paddingLeft: "10px",
                   paddingRight: "20px",
                 }}
@@ -136,7 +136,7 @@ export const AddNewUserModal = ({ setRefresh }) => {
                     borderRadius: "5px",
                     border: "1px solid #d4d4d4",
                     marginTop: "10px",
-                    marginBottom: "15px",
+                    marginBottom: "10px",
                     paddingLeft: "10px",
                     paddingRight: "20px",
                   }}
@@ -187,8 +187,8 @@ export const AddNewUserModal = ({ setRefresh }) => {
                   height: "100px",
                   borderRadius: "5px",
                   border: "1px solid #d4d4d4",
-                  marginTop: "10px",
-                  marginBottom: "15px",
+                  marginTop: "5px",
+                  // marginBottom: "15px",
                   paddingLeft: "10px",
                   paddingRight: "20px",
                 }}
@@ -208,7 +208,7 @@ export const AddNewUserModal = ({ setRefresh }) => {
               ) : (
                 <button
                   type="button"
-                  className="btn btn-primary mb-4"
+                  className="btn btn-primary"
                   data-bs-dismiss="modal"
                   disabled={!name || !email}
                   onClick={handleCreate}

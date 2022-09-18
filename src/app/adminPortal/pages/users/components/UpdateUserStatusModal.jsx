@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+import { updateUserStatus } from "../../../../../redux/actions/userActions";
 
-import {
-  updateMerchantStatusAction,
-} from "../../../../../redux/actions/merchantactions";
-
-export const EditMerchantModal = ({ data }) => {
+export const UpdateUserStatusModal = ({ data, setRefresh }) => {
   const [status, setStatus] = useState("");
   const dispatch = useDispatch();
 
   const handleUpdate = () => {
-    const payload = {
-      status,
-    };
-    dispatch(updateMerchantStatusAction(data?._id, payload));
+    // const payload = {
+    //   status,
+    // };
+    dispatch(updateUserStatus(data?._id, status, setRefresh));
   };
 
 
@@ -27,7 +24,9 @@ export const EditMerchantModal = ({ data }) => {
         // data-id={data?._id}
         // class="btn btn-primary"
         data-bs-toggle="modal"
+        // data-bs-target="#staticBackdrop"
         data-bs-target={`#staticBackdrop${data?._id}`}
+        // onClick={() => handeleClick(data?._id)}
       />
       {/* {recentIndex !== undefined && ( */}
       <>
@@ -44,7 +43,7 @@ export const EditMerchantModal = ({ data }) => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id={data?.email}>
-                  Update Merchant Status: {data?.name}
+                  Update User Status: {data?.name}
                 </h5>
                 <button
                   type="button"
@@ -71,7 +70,7 @@ export const EditMerchantModal = ({ data }) => {
                 >
                   <option value={null}>Select Status</option>
                   <option value="Active">Active</option>
-                  <option value="In-active">In-active</option>
+                  <option value="Inactive">In-active</option>
                   <option value="Disabled">Disabled</option>
                 </select>
               </div>
