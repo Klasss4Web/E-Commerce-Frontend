@@ -64,7 +64,7 @@ export const TransactionTable = ({ orders }) => {
       ) : (
         <div className="d-flex justify-content-center align-items-center flex-column">
           <ImFileEmpty size="30%" />
-          <h4 className="mt-3">No Order Available At This Time</h4>
+          <h4 className="mt-3">No Transaction Available At This Time</h4>
         </div>
       )}
     </>
