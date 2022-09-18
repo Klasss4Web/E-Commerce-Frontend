@@ -425,11 +425,11 @@ body .aside-mini .menu-aside .menu .has-submenu .menu-link:after {
 }
 
 .active-status {
-  color: green
+  color: green;
 }
 
 .inactive-status {
-  color: red
+  color: red;
 }
 
 .card_header {
@@ -529,6 +529,7 @@ body .aside-mini .menu-aside .menu .has-submenu .menu-link:after {
   .category-card {
     width: 100%;
   }
+
 
   .slide {
     flex-direction: column;

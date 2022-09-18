@@ -64,7 +64,7 @@ export const MainProducts = ({ products, loading, error }) => {
                 ))}
               </select>
             </div>
-            <div className="col-lg-2 col-6 col-md-3">
+            <div className="col-lg-2 col-6 col-md-3" style={{ marginLeft: "20px"}}>
               <select className="form-select">
                 <option>Latest</option>
                 <option>Discounts</option>

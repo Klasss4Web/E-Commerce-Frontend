@@ -14,6 +14,7 @@ export const RatingCard = ({ reviews }) => {
   
   return (
     <div
+      className="slider-wrap"
       style={{
         width: "99%",
         // height: "300px",
