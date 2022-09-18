@@ -25,11 +25,8 @@ export const RatingCard = ({ reviews }) => {
       <Slider {...settings}>
         <div className="slide">
           <div
-            className="slide-image"
-            style={{
-              // width: "30%",
-              // boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-            }}
+            className="slide-image p-2"
+            
           >
             <img
               width={"100%"}
@@ -55,7 +52,7 @@ export const RatingCard = ({ reviews }) => {
         </div>
         {reviews?.reviews?.map((individualReview) => (
           <div className="slide" key={individualReview?._id}>
-            <div className="slide-image">
+            <div className="slide-image p-2">
               <img
                 width={"100%"}
                 height="200px"
