@@ -1,10 +1,38 @@
-import { ADMIN_DELETE_USER_STATUS_FAILURE, ADMIN_DELETE_USER_STATUS_REQUEST, ADMIN_DELETE_USER_STATUS_SUCCESS, ADMIN_REGISTER_USER_FAILURE, ADMIN_REGISTER_USER_REQUEST, ADMIN_REGISTER_USER_SUCCESS, ADMIN_UPDATE_PROFILE_FAILURE, ADMIN_UPDATE_PROFILE_REQUEST, ADMIN_UPDATE_PROFILE_SUCCESS, ADMIN_UPDATE_USER_STATUS_FAILURE, ADMIN_UPDATE_USER_STATUS_REQUEST, ADMIN_UPDATE_USER_STATUS_SUCCESS, GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_RESET, GET_USERS_SUCCESS, USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_PROFILE_FAILURE, USER_PROFILE_REQUEST, USER_PROFILE_SUCCESS, USER_PROFILE_UPDATE, USER_REGISTER_FAILURE, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_UPDATE_PROFILE_FAILURE, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS } from "../constants/userConstants";
+import {
+  ADMIN_DELETE_USER_STATUS_FAILURE,
+  ADMIN_DELETE_USER_STATUS_REQUEST,
+  ADMIN_DELETE_USER_STATUS_SUCCESS,
+  ADMIN_REGISTER_USER_FAILURE,
+  ADMIN_REGISTER_USER_REQUEST,
+  ADMIN_REGISTER_USER_SUCCESS,
+  ADMIN_UPDATE_PROFILE_FAILURE,
+  ADMIN_UPDATE_PROFILE_REQUEST,
+  ADMIN_UPDATE_PROFILE_SUCCESS,
+  ADMIN_UPDATE_USER_STATUS_FAILURE,
+  ADMIN_UPDATE_USER_STATUS_REQUEST,
+  ADMIN_UPDATE_USER_STATUS_SUCCESS,
+  GET_USERS_FAILURE,
+  GET_USERS_REQUEST,
+  GET_USERS_RESET,
+  GET_USERS_SUCCESS,
+  USER_LOGIN_FAILURE,
+  USER_LOGIN_REQUEST,
+  USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
+  USER_PROFILE_FAILURE,
+  USER_PROFILE_REQUEST,
+  USER_PROFILE_SUCCESS,
+  USER_PROFILE_UPDATE,
+  USER_REGISTER_FAILURE,
+  USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS,
+  USER_UPDATE_PROFILE_FAILURE,
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_SUCCESS,
+} from "../constants/userConstants";
 
 // LOGIN
-export const userLoginReducer = (
-  state = {},
-  action
-) => {
+export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
       return {
@@ -32,10 +60,7 @@ export const userLoginReducer = (
 };
 
 //REGISTER
-export const userRegisterReducer = (
-  state = {},
-  action
-) => {
+export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
       return {
@@ -59,12 +84,8 @@ export const userRegisterReducer = (
   }
 };
 
-
 //USER PROFILE
-export const userProfileReducer = (
-  state = { user: {}},
-  action
-) => {
+export const userProfileReducer = (state = { user: {} }, action) => {
   switch (action.type) {
     case USER_PROFILE_REQUEST:
       return {
@@ -93,7 +114,6 @@ export const userProfileReducer = (
       return state;
   }
 };
-
 
 //UPDATE USER PROFILE
 export const userUpdateProfileReducer = (state = {}, action) => {
@@ -197,9 +217,8 @@ export const adminDeleteUser = (state = {}, action) => {
   }
 };
 
-
 //UPDATE ADD NEW USER
-export const adminCreateUserReducer = (state = {user: []}, action) => {
+export const adminCreateUserReducer = (state = { user: [] }, action) => {
   switch (action.type) {
     case ADMIN_REGISTER_USER_REQUEST:
       return {
@@ -225,10 +244,7 @@ export const adminCreateUserReducer = (state = {user: []}, action) => {
 };
 
 // GET USERS LIST
-export const userListReducer = (
-  state = {users:[]},
-  action
-) => {
+export const userListReducer = (state = { users: [] }, action) => {
   switch (action.type) {
     case GET_USERS_REQUEST:
       return {
@@ -248,7 +264,7 @@ export const userListReducer = (
       };
 
     case GET_USERS_RESET:
-      return {users:[]};
+      return { users: [] };
 
     default:
       return state;

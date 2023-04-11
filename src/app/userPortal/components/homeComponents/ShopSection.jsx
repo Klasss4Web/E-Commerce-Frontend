@@ -8,10 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../../../redux/actions/productActions";
 import Loading from "../loadingError/Loading";
 import Message from "../loadingError/Error";
+import { addItemToCart } from "../../../../redux/actions/cartActions";
 
 export const ShopSection = ({ keyword, pageNumber }) => {
-
-
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
@@ -19,11 +18,15 @@ export const ShopSection = ({ keyword, pageNumber }) => {
   const companyProfile = useSelector((state) => state.companyProfile);
   const { companyDetails } = companyProfile;
 
+  const addToCart = (productId, quantity = 1) => {
+    dispatch(addItemToCart(productId, quantity));
+  };
+
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
-console.log('companyDetails', companyDetails)
+  console.log("companyDetails", companyDetails);
   return (
     <div>
       <div className="container">
@@ -47,23 +50,42 @@ console.log('companyDetails', companyDetails)
                         <div className="border-product">
                           <Link to={`/products/${product?._id}`}>
                             <div className="shopBack">
-                              <img
-                                src={product?.image}
-                                alt={product?.name}
-                              />
+                              <img src={product?.image} alt={product?.name} />
                             </div>
                           </Link>
-                          <div className="shoptext">
-                            <p>
-                              <Link to={`/products/${product?._id}`}>
-                                {product?.name}
-                              </Link>
+                          <div
+                            className="shoptext"
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <div className="">
+                              <p>
+                                <Link to={`/products/${product?._id}`}>
+                                  {product?.name}
+                                </Link>
+                              </p>
+                              <Rating
+                                value={product?.rating}
+                                text={`${product?.numReviews} reviews`}
+                              />
+                              <h3>${product?.price}</h3>
+                            </div>
+                            <p
+                              style={{
+                                cursor: "pointer",
+                                fontSize: "12px",
+                                width: "20%",
+                                border: "1px solid green",
+                                padding: "5px",
+                                height: "50px",
+                                borderRadius: "10px",
+                              }}
+                              onClick={() => addToCart(product?._id, 1)}
+                            >
+                              Add To Cart
                             </p>
-                            <Rating
-                              value={product?.rating}
-                              text={`${product?.numReviews} reviews`}
-                            />
-                            <h3>${product?.price}</h3>
                           </div>
                         </div>
                       </div>
